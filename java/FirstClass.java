@@ -2,7 +2,8 @@ public class FirstClass {
 
 	public static void main(String[] args) {
 
-		System.out.println("Hello, future Java devs!");		
+		String s = "Hello, future Java devs!";
+		System.out.println(s);
 
 	}
 
