@@ -111,9 +111,12 @@ public class ArrayDemo {
     }
 
     //Overloaded Methods
-    private void printValues(int[] arr){
+    public void printValues(int[] arr){
         for(int i = 0; i < arr.length; i++){
-            System.out.println(arr[i]);
+            System.out.print(arr[i]);
+            if(i < arr.length - 1){
+                System.out.printf(", ");
+            }
         }
     }
 
@@ -126,9 +129,12 @@ public class ArrayDemo {
             - compile-time polymorphism
                 + compile-time, because the method that you will use can be determined at compile time
      */
-    private void printValues(String[] arr){
+    public void printValues(String[] arr){
         for(int i = 0; i < arr.length; i++){
-            System.out.println(arr[i]);
+            System.out.print(arr[i]);
+            if(i < arr.length - 1){
+                System.out.printf(", ");
+            }
         }
     }
 
