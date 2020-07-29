@@ -1,0 +1,7 @@
+# IDE - specific files and folders 
+.idea/
+*.iml
+
+# build folders and files 
+target/
+*.class
