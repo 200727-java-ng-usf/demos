@@ -6,4 +6,5 @@
 
 #Build folders and files
 target/
+out/
 *.class
