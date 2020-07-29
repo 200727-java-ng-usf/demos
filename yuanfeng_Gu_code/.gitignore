@@ -5,3 +5,7 @@
 # Build folders and files
 target/
 *.class
+
+/out
+/target
+.DS_Store
