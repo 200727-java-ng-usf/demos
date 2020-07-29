@@ -5,3 +5,4 @@
 #build folders, files
 *.class
 target/
+out/
