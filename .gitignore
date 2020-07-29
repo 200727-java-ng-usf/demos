@@ -4,4 +4,6 @@
 
 #Build folders and file
 target/
+#contains classfiles that we dont need
+out/ 
 *.class
