@@ -29,7 +29,7 @@ public class ArrayDemo {
             int arr[] = new int[5];
             int[] arr = {0, 0, 0, 0, 0}
 
-            Arrays are of a fixed size, meaining that
+            Arrays are of a fixed size, meaning that
             once initialized, (created) their size will
             never change.
         */
@@ -37,13 +37,12 @@ public class ArrayDemo {
         int[] intArray = new int[5];
 
         //I call System.out.println "sysout" for short
-        System.out.println("String representation: " + intArray); //prints random pseudi
-
+        System.out.println("String representation: " + intArray); //prints pseudorandom semi-memory pointer thingamabob
         /*
         * Accessing and manipulating array values
         *
         * - Java primitive arrays start with an index position of: 0
-        *  + An arry with 5 values in it, will have index position 0 through 4
+        *  + An array with 5 values in it, will have index position 0 through 4
         * - use "bracket notation" to access array value by heir index position
         * */
 
@@ -86,13 +85,13 @@ public class ArrayDemo {
         // Example of unboxing (Java automatically converting an Integer Object into a primitive int
         int[] anotherArray = { new Integer(4)};
 
-        //Example of autoboxing (Java automaticcally converting a primiteive int into an Integer object
+        //Example of autoboxing (Java automatically converting a primitive int into an Integer object
         Integer[] integerArray = {45, 123};
 
         //Java is pretty smart, it know what you meant most of hte time
         System.out.println(new Integer(10) + new Integer(5));
 
-        //if, for some reason, you want a hetergeneous array (differing types) declare a higher level type for the array
+        //if, for some reason, you want a heterogeneous array (differing types) declare a higher level type for the array
         Object[] randomArray = {12, "test", false, 4.3};
 
 //        int index0 = randomArray[0]; // Java gets mad because everything in randomArray is an Object
@@ -120,9 +119,9 @@ public class ArrayDemo {
         }
     }
 
-    /*Methoid Overloading
+    /*Method Overloading
 
-            - methoids that have hte gsame name, but differing return types or parameters
+            - methods that have hte same name, but differing return types or parameters
                 + could have fewer or more parameters
                 + could have parameters of different data types
 
@@ -138,7 +137,7 @@ public class ArrayDemo {
         }
     }
 
-    /* We can reduce the redundancy of having two mewthods that do the
+    /* We can reduce the redundancy of having two methods that do the
         same thing by making our printValues method more "generic"
      */
 //    private void printValues(Object[] arr){
