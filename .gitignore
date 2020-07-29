@@ -1,0 +1,9 @@
+# IDE-specific files and folders
+.idea/
+
+# Anything that ends with iml will be ignored
+*.iml
+
+# Build folders and files
+target/
+*.class
