@@ -1,6 +1,7 @@
 package com.revature;
 
 
+import com.revature.passbyvalue.Person;
 import com.revature.varargs.AppUser;
 import com.revature.varargs.Role;
 
@@ -15,6 +16,41 @@ public class AppDriver {
         user.addRoles(Role.DEV, Role.BLDG_MNGR);
         System.out.println(user);
 
+        System.out.println("+-----------------+");
+
+        // Pass-by-value with primitives
+        int original = 10;
+        int result = addTwo(original);
+        System.out.println(original); // 10
+        System.out.println(result); // 12
+
+        System.out.println("+-----------------+");
+
+        // Pass-by-value with object references
+        Person originalPerson = new Person("Wezley", "Singleton");
+        setFirstNameToBob(originalPerson);
+        System.out.println(originalPerson); // firstname is now "Bob"
+
+        Person anotherPerson = new Person("Jim", "Jones");
+        Person reassignedPerson = reassignPerson(anotherPerson);
+        System.out.println(anotherPerson == reassignedPerson);
+        System.out.println(anotherPerson);
+        System.out.println(reassignedPerson);
+
     }
+
+    public static int addTwo(int value) {
+        return value + 2;
+    }
+
+    public static void setFirstNameToBob(Person person) {
+        person.setFirstName("Bob");
+    }
+
+    public static Person reassignPerson(Person person) {
+        person = new Person("Alice", "Anderson");
+        return person;
+    }
+
 
 }
