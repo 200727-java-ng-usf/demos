@@ -1,7 +1,9 @@
 # IDE-specific files and folders
 .idea/
 *.iml
+.vscode/
 
 # Build folders and files
 target/
+out/
 *.class
