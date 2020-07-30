@@ -47,6 +47,19 @@ public class AppDriver {
 
 //        p1 = new Person("Don't", "Work");
 
+        Object o = new Person("Howard", "Hughes"); // covariance // downcasting (a type of includion polymorphism)
+//        Person p = now Object(); // illegal
+//        ((Person) o).
+        System.out.println("+========================================+");
+
+        int i = 10;
+        long l = i;
+        System.out.println(i);
+        System.out.println(l);
+
+        long l2 = 3_000_000_000L; //use capital letter L to avoid l looking like 1
+        int i2 = (int) l2;
+        System.out.println(i2);//overflow (3_000_000_000 doesn't fit in int range)
 
     }
 
