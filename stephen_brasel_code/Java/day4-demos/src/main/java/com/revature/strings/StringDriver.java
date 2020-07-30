@@ -101,6 +101,7 @@ public class StringDriver {
         System.out.println(sb2 == sb3);
         System.out.println(sb2.equals(sb3));    // false; because, for some reason,
                                                 // StringBuildeer/Buffer does not override .equals()
+        System.out.println(sb2.toString().equals(sb3.toString()));
         sb2.append(" How's it going?");
         System.out.println(sb2);
 
@@ -117,22 +118,35 @@ public class StringDriver {
         Integer i1 = new Integer(127);
         Integer i2 = new Integer(127);
         System.out.println(i1 == i2); //explicit use of new makes these separate objects
+        System.out.println(i1.equals(i2));
 
         Integer i3 = 127;
         Integer i4 = 127;
         System.out.println(i3 == i4);   //true!
+        System.out.println(i3.equals(i4));
 
         Integer i5 = 128;
         Integer i6 = 128;
         System.out.println(i5 == i6);
+        System.out.println(i5.equals(i6));
 
         Integer i7 = -128;
         Integer i8 = -128;
         System.out.println(i7 == i8);
+        System.out.println(i7.equals(i8));
 
         Integer i9 = -129;
         Integer i10 = -129;
         System.out.println(i9 == i10);
+        System.out.println(i9.equals(i10));
+
+//        i7 += 1;
+        Integer i11 = i7 +1;
+        System.out.println(i7);
+
+        i7 = i7 + 1;
+        System.out.println(i7);
+        System.out.println(i8);
 
 
     }
