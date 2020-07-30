@@ -10,7 +10,5 @@ public class MainDriver {
         obj.bubbledArray(arr);
         System.out.println("Sorted");
         obj.printArr(arr);
-
-
     }
 }
