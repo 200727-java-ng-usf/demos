@@ -50,6 +50,61 @@ public class driver {
         String s8= "hello"+ ", world";//still returns a new string that is outside of the String Pool
         System.out.println(s6 == s8);
 
+
+        /*
+        StringBuilder
+        -does not extend String class
+        -mutable
+        -cannot be instantiated using String literals
+        - not thread-safe
+
+        StringBuffer
+           -does not extend string Class
+           -mutable
+        -cannot be instantiated using String literals
+        - are thread-safe (slower than StringBuilder as a result)
+
+        **ANYTHING THAT IS IMMUTABLE IS IMPLICITLY THREAD-SAFE**
+
+         */
+        System.out.println("+--------------------------+");
+
+
+       // StringBuilder sb1 = "Does not work";
+        StringBuilder sb2 = new StringBuilder("Hello!");
+        StringBuilder sb3 = new StringBuilder("Hello!");
+
+        System.out.println(sb2==sb3);//false
+        System.out.println(sb2.equals(sb3));//false; because for some reason StringBuilder/Buffer does not override .equals
+
+        sb2.append("How's it going");
+        System.out.println(sb2); //SB objects are mutable
+
+        String s9 = sb2.toString();
+        System.out.println(s9);
+
+
+        System.out.println("+---------------------------------------+");
+
+
+        // Integers in memory (the wrapper class for ints
+
+        Integer i1= new Integer(127);
+        Integer i2 = new Integer( 127);
+        System.out.println(i1 == i2);// explicit use of the new makes these separate objects
+
+        Integer i3 = 127;
+        Integer i4 =127;
+        System.out.println(i3 ==i4);//true
+
+        Integer i5 =128;
+        Integer i6 = 128;
+        System.out.println(i5==i6);
+
+        Integer i7 = 127;
+        Integer i8 = 127;
+        System.out.println(i7==i8);
+
     }
 
 }

@@ -24,6 +24,11 @@ public class AppDriver {
         int result = addTwo(original);
         System.out.println(original);
         System.out.println(result);
+
+
+        //object references declared as final cannot be reassigned thought the object the point to can still be mutated
+        final Person p1 =new Person("Bob", "Bailey");
+        System.out.println(p1);
     }
 
     private static int addTwo(int value) {
