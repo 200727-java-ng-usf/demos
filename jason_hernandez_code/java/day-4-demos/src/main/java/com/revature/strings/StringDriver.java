@@ -26,6 +26,14 @@ public class StringDriver {
 
         String s8 = "Hello" + ", world!";
         System.out.println(s6 == s8); // Returns False
+
+        StringBuilder sb1 = new StringBuilder("Hello");
+        StringBuilder sb2 = new StringBuilder("Hello");
+        System.out.println(sb1 == sb2); // Prints False
+        System.out.println(sb1.equals(sb2)); // Also False: these do not override .equals
+
+        sb2.append(" How's it going?");
+        System.out.println(sb2); // Prints "Hello How's it going?"
     }
 
 }
