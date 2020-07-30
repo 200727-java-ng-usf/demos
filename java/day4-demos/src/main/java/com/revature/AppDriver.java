@@ -36,6 +36,18 @@ public class AppDriver {
         System.out.println(anotherPerson == reassignedPerson);
         System.out.println(anotherPerson);
         System.out.println(reassignedPerson);
+        System.out.println(anotherPerson.equals(reassignedPerson));
+
+        // Messing around with "final"
+        System.out.println("+-----------------------------+");
+
+        // object references declared as final cannot be reassigned, though the object
+        // they point to can still be mutated
+        final Person p1 = new Person("Bob", "Bailey");
+        p1.setFirstName("Bill");
+        System.out.println(p1);
+
+//        p1 = new Person("Don't", "Work");
 
     }
 
@@ -48,7 +60,7 @@ public class AppDriver {
     }
 
     public static Person reassignPerson(Person person) {
-        person = new Person("Alice", "Anderson");
+        person = new Person("Jim", "Jones");
         return person;
     }
 
