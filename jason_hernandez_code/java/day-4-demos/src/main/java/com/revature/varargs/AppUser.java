@@ -63,6 +63,7 @@ public class AppUser {
         // Copy existing array, with new length for additional roles
         roles = Arrays.copyOf(roles, newRoles.length + roles.length);
 
+        // Add each new role to the array
         for (int i = startingIndexNewRoles, j = 0; j < newRoles.length; i++, j++) {
             roles[i] = newRoles[j];
         }
