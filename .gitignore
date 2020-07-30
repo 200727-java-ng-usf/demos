@@ -1,6 +1,10 @@
 # IDE-specific files and folders
 .idea/
 *.iml
+.settings/
+.classpath
+.factorypath
+.project
 .vscode/
 
 # Build folders and files

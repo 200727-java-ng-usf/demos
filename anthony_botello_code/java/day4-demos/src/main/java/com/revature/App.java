@@ -45,5 +45,18 @@ public class App {
         System.out.println(anotherPerson);
         System.out.println(reassignedPerson);
 
+        // Messing around with "final"
+        System.out.println("+-----------------------------------------------------+");
+
+        // final variables cannot be reassigned (i.e., must keep same object reference)
+        // object can still be mutated
+        final Person p1 = new Person("Bob", "Bailey");  
+        p1.setFirstName("Bill");
+        System.out.println(p1);
+
+        // p1 = new Person("Doesn't", "Work"); // won't work
+
+
+
     }
 }
