@@ -30,6 +30,25 @@ public class AppDriver {
         System.out.println(ap==rp);
         System.out.println(ap);
         System.out.println(rp);
+
+        //Messing aroungd with final
+        System.out.println("++------------------------++");
+        //obj ref declared as final cannot be reassigned,
+        //though the object they pont to can still be mutated
+        final Person p1 = new Person("troy", "davis");
+        System.out.println(p1);
+        p1.setFirstName("kaila");
+        System.out.println(p1);
+        //p1 = new Person("dont", "work");
+
+        System.out.println("+-----------------------------+");
+        int i = 10;
+        long l = i;
+        System.out.println(i);
+        long l2 = 3_000_000_000L;
+        int i2 = (int) l2;
+        System.out.println(i2); //overflowing bitrate (3bil doesnt fit in an int)
+
     }
 
     public static int addTwo(int value){
