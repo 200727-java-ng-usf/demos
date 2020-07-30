@@ -50,6 +50,16 @@ public class AppDriver {
 
 //        p1 = new Person("Won't", "Work"); // p1 cannot be reassigned
 
+        Object o = new Person("Howard", "Hughes"); // covariance (a type of inclusion polymorphism)
+//        Person p2 = new Object(); // contravariance XXX
+
+        int i = 10;
+        long l = i;
+        System.out.println(l);
+
+        long l2 = 3_000_000_000_000L;
+        int i2 = (int) l2;
+        System.out.println(i2); // int size is too small to contain the value of l2
     }
 
     public static int addTwo(int value) {
