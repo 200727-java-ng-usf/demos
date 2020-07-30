@@ -49,6 +49,17 @@ public class AppDriver {
 
 //        p1 = new Person("Don't", "Work");
 
+        Object o = new Person("Howard", "Hughes"); // covariance (a type of inclusion polymorphism)
+//        Person p = new Object(); // contravariance
+
+        int i = 10;
+        long l = i;
+        System.out.println(i);
+
+        long l2 = 3_000_000_000L;
+        int i2 = (int) l2;
+        System.out.println(i2); // overflow (3,000,000,000 doesn't fit in int range)
+
     }
 
     public static int addTwo(int value) {
