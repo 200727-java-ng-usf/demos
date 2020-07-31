@@ -1,6 +1,6 @@
 package com.revature.abstractions;
 
-public class Cat extends Animal {
+public class Cat extends Animal implements Claws {
 
     private int numberOfLives;
     private String breed;
@@ -21,8 +21,8 @@ public class Cat extends Animal {
     }
 
 
-    public void makeSound() {
-        System.out.println("Meow");
+    public String makeSound() {
+        return "Meow";
     }
 
     @Override
@@ -53,5 +53,10 @@ public class Cat extends Animal {
     @Override
     public void exit(){
         System.out.println("Cat running out");
+    }
+
+    @Override
+    public void scratch(){
+        System.out.println("do scratch");
     }
 }

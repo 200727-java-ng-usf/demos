@@ -16,7 +16,7 @@ public abstract class Animal {
         return numberOfLives;
     }
 
-    public abstract  void makeSound();
+    public abstract  String makeSound();
 
     public void exit(){
         System.out.println("Animal Exits");
