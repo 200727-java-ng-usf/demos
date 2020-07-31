@@ -1,4 +1,4 @@
-package com.revature.abstractions;
+package com.revature.abstractions.cat;
 
 /*
     Abstract classes

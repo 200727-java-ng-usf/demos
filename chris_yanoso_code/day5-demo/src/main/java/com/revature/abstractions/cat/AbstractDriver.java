@@ -1,4 +1,4 @@
-package com.revature.abstractions;
+package com.revature.abstractions.cat;
 
 public class AbstractDriver {
 
@@ -30,6 +30,9 @@ public class AbstractDriver {
         // animal is casted to a cat but is trying to access a private var
         someAnimal.numberOfLives = 3;
         System.out.println(someAnimal.numberOfLives);
+        myCat.scratch();
+        System.out.println(myCat.dig());
+        myCat.wag();
 
     }
 }
