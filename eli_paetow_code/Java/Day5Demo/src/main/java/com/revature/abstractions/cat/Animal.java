@@ -1,4 +1,4 @@
-package com.revature.abstractions;
+package com.revature.abstractions.cat;
 
 public abstract class Animal {
 
@@ -17,4 +17,5 @@ public abstract class Animal {
     public abstract void makeSound();
 
 
+    public abstract void howLongAreClaws();
 }

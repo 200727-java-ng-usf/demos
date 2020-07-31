@@ -1,4 +1,4 @@
-package com.revature.abstractions;
+package com.revature.abstractions.cat;
 
 
 /*
@@ -16,9 +16,19 @@ public class AbstractDriver {
         Cat hisCat = new Cat(8, "persian", true);
         Cat herCat = new Cat(8, "calico", true);
 
-        Animal someAnimal = new Cat();
+        Animal someAnimal = new Cat(); //covariance
 
         System.out.println(myCat.getBreed());
+        System.out.println("--------------------");
+        System.out.println(hisCat.isHasFur());
+        System.out.println("--------------------");
+        System.out.println(myCat.howLongAreClaws);
+        System.out.println("--------------------");
+        myCat.dig();
+        System.out.println(myCat.howLongAreClaws);
+        myCat.wag();
+
+
 
 
     }
