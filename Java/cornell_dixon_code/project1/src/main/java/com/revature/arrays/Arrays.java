@@ -14,7 +14,7 @@ public class Arrays {
         return arr;
     }
 
-    public void printArr(int arr[]){ //this is the method that allows for the driver to string the bubblesorted array
+    public void printArr(int arr[]){     //this is the method that allows for the driver to string the bubblesorted array
 
         int n = arr.length;
         for (int i=0; i<n; ++i){
