@@ -36,6 +36,7 @@ public class AbstractDriver {
         Cat someCat = (Cat) someAnimal;
         System.out.println(someCat.getAnimalNumberOfLives());
 
-
+        someCat.wag();
+        someCat.scratch();
     }
 }
