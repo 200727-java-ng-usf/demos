@@ -36,5 +36,11 @@ public class AbstractDriver {
         System.out.println(someAnimal.value);
         System.out.println(someCat.value);
         someCat.getAnimalNumberOfLives();
+        System.out.println("++------------------++");
+        System.out.println(((Cat) someAnimal).dig());
+        System.out.println(someCat.dig());
+        System.out.println("++------------------++");
+        ((Cat) someAnimal).wag();
+        someCat.wag();
     }
 }
