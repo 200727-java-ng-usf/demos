@@ -1,6 +1,10 @@
 package com.revature.abstractions;
 
-public class Cat extends Animal {
+import com.revature.interfaces.Alive;
+import com.revature.interfaces.Claws;
+import com.revature.interfaces.WaggingTail;
+
+public class Cat extends Animal implements Claws, Alive, WaggingTail {
 
     private int numberOfLives; // Animal.numberOfLives is shadowed by this declaration
     private String breed;
@@ -50,5 +54,16 @@ public class Cat extends Animal {
     public void makeSound() {
 
         System.out.println("Meow");
+    }
+
+
+    @Override
+    public void scratch() {
+        System.out.println("i'll scratch all");
+    }
+
+    @Override
+    public void wag() {
+        System.out.println("Wagging tail back and forth");
     }
 }

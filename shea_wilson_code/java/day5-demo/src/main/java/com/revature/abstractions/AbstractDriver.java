@@ -23,6 +23,14 @@ public class AbstractDriver {
         System.out.println(someAnimal.numberOfLives); // 1
 
 
+        System.out.println("-------------interfaces--------------------------");
+
+        kitty.scratch();
+        kitty.wag();
+
+
+
+
 
 
     }
