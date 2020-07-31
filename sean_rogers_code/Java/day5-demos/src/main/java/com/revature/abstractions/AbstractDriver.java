@@ -30,5 +30,8 @@ public class AbstractDriver {
         Cat someCat = (Cat) someAnimal;
         //System.out.println(someCat.getAnimalOfLives()); // 1
         System.out.println(someCat.getNumberOfLives()); // 9
+
+        Owner owner = new Owner();
+        owner.makeSound();
     }
 }
