@@ -20,14 +20,24 @@ public abstract class Animal {
 
     public int numberOfLives = 1;
 
+    //protected declarations are visible to any class in the same package, and subclasses anywhere in the app
+    protected String value = "some value";
+
+    //package private ("default access") declarations are only visible to types in the same package
+    String thing;
+
     public Animal() {
         super();
         System.out.println("Animals constructor called!");
     }
 
-    public Animal(int numberOfLives) {
+    public Animal(int lives) {
         super();
-        this.numberOfLives = numberOfLives;
+        this.numberOfLives = lives;
+    }
+
+    public void exist(){
+        System.out.println("The animal exists...");
     }
 
     /*
