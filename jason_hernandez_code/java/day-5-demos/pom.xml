@@ -9,7 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
      <properties>
-
+        <maven.maven.source>1.8</maven.maven.source>
+         <maven.source.target>1.8</maven.source.target>
      </properties>
 
 </project>
