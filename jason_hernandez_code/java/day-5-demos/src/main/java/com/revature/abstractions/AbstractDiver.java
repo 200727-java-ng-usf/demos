@@ -14,5 +14,8 @@ public class AbstractDiver {
         Animal someAnimal = new Cat(); // Covariance
         System.out.println(someAnimal.numberOfLives); // 1 - it uses Animal state
         System.out.println(someAnimal.getNumberOfLives()); // 9 - it gets the Cat state by the override and this
+
+        hisCat.scratch();
+        hisCat.wag();
     }
 }

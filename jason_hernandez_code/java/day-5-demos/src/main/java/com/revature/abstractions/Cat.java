@@ -1,6 +1,6 @@
 package com.revature.abstractions;
 
-public class Cat extends Animal implements Claws{
+public class Cat extends Animal implements Claws, Alive, TailWag{
 
     private int numberOfLives;
     private String breed;
@@ -51,5 +51,10 @@ public class Cat extends Animal implements Claws{
 
     public void scratch() {
         System.out.println("I scratched you with my " + howLongAreClaws + "cm long claws");
+    }
+
+    @Override
+    public void wag() {
+        System.out.println("I whip my tail back and forth!");
     }
 }
