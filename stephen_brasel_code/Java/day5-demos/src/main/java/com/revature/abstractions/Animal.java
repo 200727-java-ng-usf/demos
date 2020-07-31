@@ -1,0 +1,53 @@
+package com.revature.abstractions;
+
+/*
+    Abstract classes
+
+        - cannot be instantiated directly,
+            must have a concrete implementation(a subclass that is not abstract)
+            by means of one or more subclasses
+            + all abstract methods must be implemented by concrete subclasses
+
+        - Still has constructors, because subclasses will leverage these for their own instantiation.
+
+        - Can have 0 or more abstract methods contained within its declaration
+            + abstract methods are simply methods that do not have an implementation,
+                also called "method stubs."
+
+
+ */
+public abstract class Animal {
+
+    public int numberOfLives = 1;
+
+    public Animal() {
+        super();
+        System.out.println("Animals constructor called!");
+    }
+
+    public Animal(int numberOfLives) {
+        super();
+        this.numberOfLives = numberOfLives;
+    }
+
+    /*
+        concrete method, meaning it has an implementation; not required to be overridden
+        by subclasses - though they can if they choose (unless declared final)
+     */
+    public int getNumberOfLives() {
+        return numberOfLives;
+    }
+
+//    public void setNumberOfLives(int numberOfLives) {
+//        this.numberOfLives = numberOfLives;
+//    }
+
+    /*
+        Abstract methods cannot have a block.
+
+        Abstract method, also known as a method stub;
+        all concrete subclasses will be required to override this method to provide an implementation.
+        If they do not provide an implementation, those classes must themselves be declared as abstract.
+     */
+    public abstract void makeSound();
+}
