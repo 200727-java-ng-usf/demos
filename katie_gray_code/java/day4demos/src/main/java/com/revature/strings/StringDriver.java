@@ -1,6 +1,5 @@
 package com.revature.strings;
 
-
 import java.net.Inet4Address;
 
 /*
