@@ -20,6 +20,12 @@ public abstract class Animal {
 
     public int numberOfLives = 1;
 
+    // protected declarations are visible to any class in the same package, and subclasses anywhere in the app
+    protected String value = "some value";
+
+    // package-private ("default access") declarations are only visible to types in the same package
+    String thing;
+
     public Animal() {
         super();
         System.out.println("Animal constructor called!");
@@ -27,6 +33,10 @@ public abstract class Animal {
 
     public Animal(int lives) {
         numberOfLives = lives;
+    }
+
+    public void exist() {
+        System.out.println("The animal exists...");
     }
 
     // concrete method, meaning it has an implementation; not required to be overridden
