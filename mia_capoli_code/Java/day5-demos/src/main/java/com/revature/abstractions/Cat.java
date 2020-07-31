@@ -29,7 +29,7 @@ public class Cat extends Animal implements Claws, Alive, WaggingTail{
     }
 
     public int getAnimalNumberOfLives() {
-        return super.numberOfLives;
+        return numberOfLives;
     }
 
     @Override //overridden because animal also declares a method with the same name
