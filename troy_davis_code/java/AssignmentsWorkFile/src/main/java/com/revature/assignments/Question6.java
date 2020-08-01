@@ -6,8 +6,10 @@ package com.revature.assignments;
 public class Question6 {
 
     public boolean findIfEven(int number){
+
         int n = number;
         //TODO: fix the method so that is does the thing!
+
         if(n/2 == 0){
             System.out.println(n + " appears to be even");
             return true;
