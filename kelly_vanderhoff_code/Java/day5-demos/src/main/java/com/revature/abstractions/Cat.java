@@ -1,6 +1,6 @@
 package com.revature.abstractions;
 
-public class Cat extends Animal {
+public class Cat extends Animal implements Claws, Alive, WaggingTail {
 
     private int numberOfLives; // Animal.numberOfLives is shadowed by this declaration
     private String breed;
@@ -61,6 +61,17 @@ public class Cat extends Animal {
     @Override
     public void makeSound() {
         System.out.println("Meow.");
+        this.numberOfLives--; // this is a side effect
     }
 
+    @Override
+    public void wag() {
+        System.out.println("The cat flicks its tail back and forth.");
+    }
+
+    @Override
+    public void scratch() {
+        System.out.print("The cat scratched you with its ");
+        System.out.println(howLongAreClaws + " cm claws.  Ouch!");
+    }
 }

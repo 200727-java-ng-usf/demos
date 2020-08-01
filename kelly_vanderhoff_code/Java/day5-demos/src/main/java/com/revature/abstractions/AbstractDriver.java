@@ -43,5 +43,8 @@ public class AbstractDriver {
         someCat.exists();
 
         System.out.println(someCat.thing); // cat toy
+
+        someCat.scratch();
+        myCat.wag();
     }
 }
