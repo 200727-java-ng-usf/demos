@@ -10,6 +10,7 @@ public class TeaCup {
     public int width;
     public String material;
     public boolean clean;
+    public String brand;
 
     public TeaCup(){
         this.isBreakable = true;
