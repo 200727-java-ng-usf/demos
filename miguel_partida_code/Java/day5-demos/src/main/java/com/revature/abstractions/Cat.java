@@ -1,6 +1,6 @@
 package com.revature.abstractions;
 
-public class Cat extends Animal {
+public class Cat extends Animal implements Claws,Alive,WaggingTail {
 
     private int numberOfLives; // Animal.numberOfLives is shadowed by this declaration
     private String breed;
@@ -10,7 +10,7 @@ public class Cat extends Animal {
         super();
         System.out.println("Cat constructor called!");
         this.numberOfLives = 9;
-        this.breed = "Domestic Shorthair";
+        this.breed = "Domestic Short-hair";
         this.hasFur = true;
         value = "Cat value";
         thing = "Cat toy";
@@ -55,6 +55,19 @@ public class Cat extends Animal {
 
     public void makeSound() {
         System.out.println("mEoW.");
+       // this.numberOfLives--;
+    }
+    public void scratch() {
+        System.out.println("I scratched you with my " + howLongAreClaws + "long claws");
     }
 
+    @Override
+    public int dig() {
+        return 0;
+    }
+
+    @Override
+    public void wag() {
+        System.out.println("I whip my tail back and fourth, I whip my tail back and fourth");
+    }
 }

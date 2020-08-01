@@ -41,6 +41,11 @@ public class AbstractDriver {
         System.out.println(someCat.getNumberOfLives()); //9
 
         System.out.println(someAnimal.value);
+        // does typing like this have a big difference it kinda does lets put it
+        // back on and then typing like this feels a lot faster
+
+        someCat.wag();
+
 
     }
 }
