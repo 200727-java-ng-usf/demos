@@ -54,6 +54,7 @@ public class StringDriver {
         Integer i3 =10;
         Integer i4 =10;  // i3 and i4 are in the same pool but when the number greater than 127 System when new a object.
 
+        System.out.println();
 
 
     }

@@ -2,12 +2,14 @@ package com.revature.teacup;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import static org.junit.Assert.*;
 
 public class TeaCupTest {
 
     TeaCup myCup = new TeaCup(3);
+    TeaCup mockedCup = Mockito.mock(TeaCup.class);
 
 
 
