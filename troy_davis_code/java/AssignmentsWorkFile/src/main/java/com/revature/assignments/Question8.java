@@ -7,50 +7,41 @@
 
 package com.revature.assignments;
 
-import com.sun.xml.internal.fastinfoset.util.CharArray;
-
 import java.util.ArrayList;
 
 public class Question8 {
+    //ArrayList to hold Arrays before they are tested
     public ArrayList<String> storageArrayList = new ArrayList<>();
+    //ArrayList to hold only Strings which are palindromes
     public ArrayList<String> palindromeArrayList = new ArrayList<>();
 
-
-
+    //method to test if a single string is a palindrome or not
     public boolean isTHisAPalindrome(String someString) {
-        //method to add an item to the array list
         boolean s = someString.equalsIgnoreCase(new StringBuilder(someString).reverse().toString());
             if(s){
                 return true;
             }else return false;
     }
 
-    public void addToStorageArrayList(String someString){
-        if(isTHisAPalindrome(someString)){
-            palindromeArrayList.add(someString);
-            System.out.println("it appears that " + someString + " is a palindrome, i will add it to the list");
-        }
-        else{
-            System.out.println("it appears that "+ someString + " is not a palindrome, i won't add it to the list.");
-        }
-    }
-
-    public ArrayList<String> getStorageArrayList() {
-        return storageArrayList;
+    //method to add a single string to the Palindrome arraylist, once tested of course
+    public void addToPalindromeArrayList(String someString){
+        palindromeArrayList.add(someString);
     }
 
     public void setStorageArrayList(ArrayList<String> storageArrayList) {
-        this.storageArrayList = storageArrayList;
+        //take in an Array List, find if each is a palindrome, if so, add it to the palindrome array list
+        for(String s: storageArrayList){
+            if(isTHisAPalindrome(s)){
+                addToPalindromeArrayList(s);
+            }
+        }
     }
 
     public ArrayList<String> getPalindromeArrayList() {
         return palindromeArrayList;
     }
 
-    public void setPalindromeArrayList(ArrayList<String> palindromeArrayList) {
-        //TODO: add items to arraylist
-        this.palindromeArrayList = palindromeArrayList;
-    }
+
 
     //method to print out the ArrayList
     @Override
