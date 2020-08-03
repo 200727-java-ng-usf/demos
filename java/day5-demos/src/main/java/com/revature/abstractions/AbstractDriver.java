@@ -1,4 +1,4 @@
-package com.revature.abstractions.cat;
+package com.revature.abstractions;
 
 public class AbstractDriver {
 
@@ -14,6 +14,8 @@ public class AbstractDriver {
         System.out.println("+---------------+");
 
         System.out.println(myCat.getBreed());
+        System.out.println(yourCat.hasFur());
+        System.out.println(hisCat.hasFur());
         herCat.makeSound();
 
         System.out.println("+---------------+");
@@ -30,12 +32,18 @@ public class AbstractDriver {
         System.out.println(someAnimal.numberOfLives); // 1
         System.out.println(someAnimal.getNumberOfLives()); // 9
 
+        someAnimal.exist();
 
         Cat someCat = (Cat) someAnimal;
 
+        ((Cat) someAnimal).exist();
 
-
+        System.out.println(someCat.getAnimalOfLives()); // 1
         System.out.println(someCat.getNumberOfLives()); // 9
+
+        someCat.exist();
+
+        System.out.println(someAnimal.value);
 
 
 
