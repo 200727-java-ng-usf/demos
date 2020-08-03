@@ -7,21 +7,32 @@
 package com.revature.assignments;
 
 import com.revature.assignments.Question8;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import java.util.ArrayList;
+
 public class Question8Test {
-
-    @Before
-    public void setup(){
-        String[] startingArray = new String[]{"karen", "madam", "tom", "civic", "radar", "jimmy",
-                                                "kayak", "john", "refer", "billy", "did"};
-        Question8 q = new Question8(startingArray);
-    }
-
+    Question8 q = new Question8();
+                //{"karen", "madam", "tom", "civic", "radar", "jimmy",
+                  //                              "kayak", "john", "refer", "billy", "did"};
     @Test
-    public void numberResturnTest(){
+    public void doesItStoreTest(){
+        //does the method store the names when passed into the array list
+        //and then return the completed array list?
+
+        q.addToStorageArrayList("karen");
+        ArrayList<String> test = q.getPalindromeArrayList();
+        String t = test.get(0);
+        Assert.assertTrue(t == "karen");
+
+        System.out.println(q);
+    }
+    @Test
+    public void palendromStoreTest(){
+        //will the method return a separate array list of known palindromes?
 
     }
 }
