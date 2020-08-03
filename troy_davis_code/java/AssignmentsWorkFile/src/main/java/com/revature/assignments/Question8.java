@@ -19,24 +19,19 @@ public class Question8 {
 
     public boolean isTHisAPalindrome(String someString) {
         //method to add an item to the array list
-        char[] placeHolder = {};
-        char[] toAdd = someString.toCharArray();
-        for(int i = toAdd.length -1; i <= 0; i--){
-            placeHolder[i] = toAdd[i];
-        }
-        if(placeHolder == toAdd){
-            return true;
-        }else
-            return false;
+        boolean s = someString.equalsIgnoreCase(new StringBuilder(someString).reverse().toString());
+            if(s){
+                return true;
+            }else return false;
     }
 
     public void addToStorageArrayList(String someString){
         if(isTHisAPalindrome(someString)){
             palindromeArrayList.add(someString);
-            System.out.println("it appears that");
+            System.out.println("it appears that " + someString + " is a palindrome, i will add it to the list");
         }
         else{
-            System.out.println("it appears that String is not a palindrome, i won't add it to the list.");
+            System.out.println("it appears that "+ someString + " is not a palindrome, i won't add it to the list.");
         }
     }
 

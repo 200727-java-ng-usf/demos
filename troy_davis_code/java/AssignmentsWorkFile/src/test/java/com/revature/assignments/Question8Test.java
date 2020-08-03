@@ -19,20 +19,18 @@ public class Question8Test {
                 //{"karen", "madam", "tom", "civic", "radar", "jimmy",
                   //                              "kayak", "john", "refer", "billy", "did"};
     @Test
-    public void doesItStoreTest(){
-        //does the method store the names when passed into the array list
-        //and then return the completed array list?
+    public void canDetectPalindrome(){
+        //can the class detect a single palendrome when passed?
+        Assert.assertTrue(q.isTHisAPalindrome("madam") );
 
-        q.addToStorageArrayList("karen");
-        ArrayList<String> test = q.getPalindromeArrayList();
-        String t = test.get(0);
-        Assert.assertTrue(t == "karen");
-
-        System.out.println(q);
     }
     @Test
     public void palendromStoreTest(){
         //will the method return a separate array list of known palindromes?
 
+        //add known palindrome to ArrayList
+        q.addToStorageArrayList("madam");
+        //did it end up in the separated palindrome ArrayList?
+        Assert.assertTrue(q.getPalindromeArrayList().contains("madam"));
     }
 }
