@@ -1,4 +1,3 @@
-package com.revature.arrays;
 
 public class ArrayDemo {
     public void learningArrays() {
