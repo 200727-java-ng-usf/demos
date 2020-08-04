@@ -5,6 +5,7 @@ public class Owner extends Animal {
     Cat pet;
 
     public Owner(Cat mockedCat) {
+        pet = mockedCat;
     }
 
     @Override

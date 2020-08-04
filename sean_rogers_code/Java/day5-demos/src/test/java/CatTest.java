@@ -45,6 +45,7 @@ public class CatTest {
         assertEquals("Domestic shorthair", cat.getBreed());
     }
 
+    @Test
     public void checkOwnerLives() {
         Mockito.when(mockedCat.getNumberOfLives());
         Owner a = new Owner(mockedCat);
