@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class ReadFileDriver {
 
@@ -94,8 +95,18 @@ public class ReadFileDriver {
             System.out.println(usersList.get(i));
         }
         System.out.println("+---------------+");
-        //Lambda Expression (java
+        //Lambda Expression (java 8
+        //A lambda expression is the inline implementation of a functional interface's one abstract method
         usersList.forEach(user -> System.out.println(user));
+
+        //before java 8, and the intro of lambda expressions; this is what we had to do before
+        //this is an example of leverages a " local anonymous class"
+//        usersList.forEach(new Consumer<User>() {
+//            @Override
+//            public void accept(User user) {
+//                System.out.println(user);
+//            }
+//        });
 
         System.out.println("+---------------+");
         //method reference Expression
