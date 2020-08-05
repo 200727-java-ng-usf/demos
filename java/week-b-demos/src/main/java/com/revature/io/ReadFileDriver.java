@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class ReadFileDriver {
 
@@ -94,10 +95,27 @@ public class ReadFileDriver {
 
         System.out.println("+-------------------------+");
 
-        usersList.forEach(user -> System.out.println(user)); // lambda expression syntax (Java 8+)
+        // lambda expression syntax (Java 8+)
+        // can only be used with functional interfaces (one and only one abstract method; static/defaults don't count)
+
+        // A lambda expression is the inline implementation of a functional interface's one abstract method
+        usersList.forEach(user -> System.out.println(user));
 
         System.out.println("+-------------------------+");
 
+        // before Java 8, and the intro of lambda expressions; this is what we had to do before
+        // this example leverages a "local anonymous class"
+        // QC shouldn't ask about this; its an OCP topic (OPTIONAL)
+        usersList.forEach(new Consumer<User>() {
+            @Override
+            public void accept(User user) {
+                System.out.println(user);
+            }
+        });
+
+        System.out.println("+-------------------------+");
+
+        // same restrictions as the lambda expression
         usersList.forEach(System.out::println); // method reference syntax (Java 8+)
 
     }
