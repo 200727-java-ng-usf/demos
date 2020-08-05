@@ -1,11 +1,20 @@
 package com.revature.io.models;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class User {
     private int id;
     private String username;
     private String password;
+
+    public User() {
+
+    }
 
     public User(int id, String username, String password) {
         this.id = id;
@@ -64,4 +73,6 @@ public class User {
                 ", password='" + password + '\'' +
                 '}';
     }
+
+
 }
