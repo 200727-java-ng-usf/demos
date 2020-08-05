@@ -8,7 +8,6 @@ public interface Claws {
     abstract void scratch();
 
     default int dig(){
-
         return -1;
     }
 

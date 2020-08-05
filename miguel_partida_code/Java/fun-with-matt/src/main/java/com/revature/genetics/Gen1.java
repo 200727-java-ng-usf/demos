@@ -1,4 +1,4 @@
-package genetics;
+package com.revature.genetics;
 
 public class Gen1 <T> {
     /*
