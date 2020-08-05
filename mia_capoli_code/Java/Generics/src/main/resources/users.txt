@@ -1,0 +1,4 @@
+1:mcapoli:password
+2:wsingleton:manager
+3:bkruppa:javascript
+4:rconnell:java
