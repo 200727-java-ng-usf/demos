@@ -1,0 +1,4 @@
+1:cyanoso:password
+2:jdoe:manager
+3:bkruppa:javascript
+4:rconnell:java
