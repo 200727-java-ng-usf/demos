@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class ReadFileDriver {
@@ -17,7 +18,7 @@ public class ReadFileDriver {
         File happyText = new File("src/main/resources/happy-text.txt");
 
         // check if file exists
-        if(!happyText.exists()){
+        if (!happyText.exists()) {
             return;
         }
 
@@ -25,17 +26,16 @@ public class ReadFileDriver {
             BufferedReader reader = new BufferedReader(new FileReader(happyText));
             String currentLine = reader.readLine();
 
-            while(currentLine!=null){
+            while (currentLine != null) {
                 System.out.println(currentLine); // print current line
                 currentLine = reader.readLine(); // storing
             }
 
 
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
             System.out.println("An exception occurred while reading the file");
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("something went wrong");
 
@@ -51,7 +51,7 @@ public class ReadFileDriver {
             BufferedReader reader = new BufferedReader(new FileReader(user));
             String currentLine = reader.readLine();
 
-            while (currentLine != null){
+            while (currentLine != null) {
                 String[] userFields = currentLine.split(":");  // add word by word split by :
                 User user1 = new User();
 
@@ -71,18 +71,24 @@ public class ReadFileDriver {
 
             }
             reader.close();
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        for (User u:usersList){
+        for (User u : usersList) {
             System.out.println(u);
         }
         System.out.println("-------------------------------------");
-        usersList.forEach(user1 ->  System.out.println(user1));
+        usersList.forEach(user1 -> System.out.println(user1));
 
         usersList.forEach(System.out::println);
 
+        System.out.println("------------------------------------------");
+
+        Iterator iterator = usersList.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
     }
 }
