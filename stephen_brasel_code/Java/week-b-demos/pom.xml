@@ -5,7 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.revature</groupId>
-    <artifactId>day7-demos</artifactId>
+    <artifactId>week-b-demos
+    </artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
