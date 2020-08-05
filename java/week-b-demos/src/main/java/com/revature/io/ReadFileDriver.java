@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -118,6 +119,13 @@ public class ReadFileDriver {
         // same restrictions as the lambda expression
         usersList.forEach(System.out::println); // method reference syntax (Java 8+)
 
+        System.out.println("+------------------------|+");
+
+        Iterator<User> userIterator = usersList.iterator();
+
+        while(userIterator.hasNext()) {
+            System.out.println(userIterator.next());
+        }
     }
 
 }
