@@ -40,7 +40,7 @@ public class CollectionsDriver {
         System.out.println(thisUser);
 
         for(String key : userMap.keySet()) {
-            System.out.println(userMap.getKey);
+            System.out.println(userMap.get(key));
         }
 
     }
