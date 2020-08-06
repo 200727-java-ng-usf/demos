@@ -85,6 +85,40 @@ public class CustomLinkedList<T> {
         return false;
     }
 
+    /**
+     * Removes all duplicates of a provided data value - leaving only one node with that value
+     * @param dataValue
+     */
+    public void removeDuplicatesOf(T dataValue) {
+        boolean dataValueFound = false;
+        if(head.getData() == dataValue){
+            //head = head.getNextNode();
+            dataValueFound = true;
+            /*if(head.getNextNode() == null) {
+                tail = null;
+                head = null;
+            }*/
+            //return true;
+        }
+        Node<T> currentNode = head;
+        while(currentNode.getNextNode() != null) {
+            if (currentNode.getNextNode().getData() == dataValue) {
+                if(!dataValueFound) {
+                    dataValueFound = true;
+                } else {
+                    currentNode.setNextNode(currentNode.getNextNode().getNextNode());
+                }
+                //currentNode.setNextNode(currentNode.getNextNode().getNextNode());
+                //return true;
+            }
+            currentNode = currentNode.getNextNode();
+            if(currentNode == null) {
+                break;
+            }
+        }
+        //return false;
+    }
+
 
 
     /**
