@@ -1,5 +1,7 @@
 package com.revature.structures.util;
 
+import com.sun.org.apache.bcel.internal.generic.SWITCH;
+
 /**
  * This is a custom implementation of a linked list data
  * structure, which vaguely mirrors the Java Collections
@@ -66,7 +68,11 @@ public class CustomLinkedList<T> {
 
         if (head != null) {
             T data = head.getData();
-            head = head.getNextNode();
+            if(head == tail){
+                tail = null;
+            }
+                head = head.getNextNode();
+
             return data;
         }
 
@@ -87,6 +93,43 @@ public class CustomLinkedList<T> {
             System.out.println("Node value: " + currentNode.getData());
             currentNode = currentNode.getNextNode();
         }
+
+    }
+    public void remove(String value) {
+        Node checker = head;
+        removeRecursive(value,checker);
+    }
+    public void removeRecursive(String value, Node checker){
+    String identifier = "";
+        if (head == null){
+            identifier = "empty";
+        } else if (head.getData() != value){
+            identifier = "next";
+        } else {
+            identifier = "found";
+        }
+        switch(identifier){
+            case "empty":
+                System.out.println("The list is empty");
+                break;
+            case "next":
+                head = head.getNextNode();
+                removeRecursive(value, checker);
+                break;
+            case "found":
+                if(head == tail){
+                    tail = null;
+                }
+                 head = head.getNextNode();
+                System.out.println( value + " was found and first instance removed from list");
+                head = checker;
+                break;
+
+
+            default:
+                throw new IllegalStateException("Unexpected value: " + identifier);
+        }
+
 
     }
 }
