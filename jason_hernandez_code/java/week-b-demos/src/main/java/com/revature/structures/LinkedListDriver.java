@@ -9,6 +9,10 @@ public class LinkedListDriver {
         stringList.insert("test2");
         stringList.insert("test3");
         stringList.insert("test4");
+        stringList.insert("test5");
+        stringList.insert("test3");
+        stringList.insert("test3");
+        stringList.insert("test5");
 
         stringList.printList();
 
@@ -17,5 +21,8 @@ public class LinkedListDriver {
         System.out.println(stringList.peek()); // Same as before, because not removed
         System.out.println(stringList.poll()); // Still same as before, but removed this time
         System.out.println(stringList.poll()); // Now the next one
+
+
     }
+
 }
