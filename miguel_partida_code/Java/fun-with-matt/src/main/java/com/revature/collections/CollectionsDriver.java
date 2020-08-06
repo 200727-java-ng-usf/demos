@@ -1,9 +1,9 @@
 package com.revature.collections;
 
 import com.revature.io.models.User;
+import sun.nio.cs.US_ASCII;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class CollectionsDriver {
     /*
@@ -35,6 +35,73 @@ public class CollectionsDriver {
 
         userSet.forEach(user -> System.out.println(user));
 
+        System.out.println("+-------------------+");
+
+        /*
+        Queues
+        - Follows the first-in, first-out Strategy
+        - adding to a queue using .add is also know as enqueueing
+        -removing from a queue using.
+        - members in the middle of the queue are inaccessible
+         */
+
+        Queue<User> userQueue = new LinkedList<>();
+        userQueue.add(u);
+        userQueue.add(u2);
+        userQueue.add(new User(45,"Rex","clone"));
+        userQueue.add(null);
+
+        userQueue.forEach(user -> System.out.println(user));
+        User someUser = userQueue.poll();
+        System.out.println(someUser);
+
+        System.out.println("+-------------------+");
+
+        userQueue.forEach(user -> System.out.println(user));
+
+        System.out.println("+-------------------+");
+
+        User anotherUser = userQueue.peek();
+        System.out.println(anotherUser);
+
+        System.out.println("+-------------------+");
+        userQueue.forEach(user -> System.out.println(user));
+
+        /*
+        Deques
+        -"double-ended" queues
+        - insert adn removal operations can be performed on both ends of the structure
+         */
+
+        ArrayDeque<User> userDeque = new ArrayDeque<>();
+        userDeque.add(u);
+        userDeque.add(new User(45,"R2-D2","droid"));
+
+        System.out.println("+---------------------");
+
+        /*
+        Maps
+        - "maps" a key to a value
+        - cannot have duplicate keys
+        - in most implementations, keys are allowed to be null - so long as there is only one null key
+        - values do not need to be unique
+        -NOT A PART OF THE COLLECTIONS API
+         */
+
+        Map<String ,User> userMap = new HashMap<>();
+        userMap.put("mpartida", u);
+        userMap.put(null, null);
+        userMap.put("steve", new User(87,"person","pword"));
+        userMap.put("mpartida", new User());
+        // this will override the previous value associated with mpartida
+        userMap.put(new String("mpartida"), new User(456,"user","wow"));
+        User thisUser = userMap.get("mpartida");
+        System.out.println(thisUser);
+// you cannot iterate over a map... directly at least, however
+      for (String key : userMap.keySet()){
+            System.out.println(userMap.get(key));
+        }
+       // Iterator<Map.Entry<String ,User>> m
 
     }
 }
