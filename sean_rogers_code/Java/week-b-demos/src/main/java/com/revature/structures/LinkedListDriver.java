@@ -13,15 +13,24 @@ public class LinkedListDriver {
         stringList.insert("test6");
         stringList.insert("test7");
         stringList.insert("test8");
-
         stringList.printList();
 
-        System.out.println("+---------------+");
+        stringList.removeByKey("test9");
+        System.out.println();
+        stringList.printList();
 
-        System.out.println(stringList.peek()); //test1
-        System.out.println(stringList.peek()); //test1
-        System.out.println(stringList.poll()); //test1
-        System.out.println(stringList.poll()); //test2
+        System.out.println("1---------------+");
+
+//        System.out.println(stringList.peek()); //test1
+//        System.out.println(stringList.peek()); //test1
+//        System.out.println(stringList.poll()); //test1
+//        System.out.println(stringList.poll()); //test2
+        /*System.out.println(stringList.poll());
+        System.out.println(stringList.poll());
+        System.out.println(stringList.poll());*/
+
+        System.out.println("2---------------+");
+        //stringList.printList();
 
     }
 }

@@ -52,10 +52,41 @@ public class CustomLinkedList<T> {
         if (head != null) {
             T data = head.getData();
             head = head.getNextNode();
+            if(head == null) {
+                tail = null;
+            }
             return data;
         }
         return null;
     }
+
+    /**
+     * Removes the first occurrence of the provided data value in the linked list
+     * @param dataValue
+     * @return a boolean value; true if a data node was removed and false if one was not
+     */
+    public boolean removeByKey(T dataValue) {
+        if(head.getData() == dataValue){
+            head = head.getNextNode();
+            if(head.getNextNode() == null) {
+                tail = null;
+                head = null;
+            }
+            return true;
+        }
+        Node<T> currentNode = head;
+        while(currentNode.getNextNode() != null) {
+            if (currentNode.getNextNode().getData() == dataValue) {
+                currentNode.setNextNode(currentNode.getNextNode().getNextNode());
+                return true;
+            }
+            currentNode = currentNode.getNextNode();
+        }
+        return false;
+    }
+
+
+
     /**
      * Convenience method for printing out our list's contents
      */
