@@ -32,8 +32,9 @@ public class CustomLinkedList<T> {
         else {
             System.out.println("list has existing elements, adding new code to the end");
             tail.setNextNode(newNode);
-            tail = newNode;
+
         }
+        tail = newNode;
         /**
          *
          */
@@ -65,6 +66,20 @@ public class CustomLinkedList<T> {
         }
 
     }
+    public boolean removeByKey(T dataValue) {
+
+        Node<T> currentNode = this.head;
+
+        while(currentNode != null){
+
+            if(dataValue == currentNode ){
 
 
-}
+                }
+                return true;
+
+             }
+            return false;
+        }
+    }
+
