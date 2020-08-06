@@ -47,6 +47,8 @@ public class CustomLinkedList<T> {
         return null;
 
     }
+    //added tail set to null as well and then set tail equal to get next node. should end up
+    //head and tail equal to null
     public T poll(){
         if (head != null && tail !=null){
             T data = head.getData();
