@@ -106,6 +106,7 @@ public class CustomLinkedList<T> {
                 if(!dataValueFound) {
                     dataValueFound = true;
                 } else {
+                    if(currentNode.getNextNode().getNextNode() == null)
                     currentNode.setNextNode(currentNode.getNextNode().getNextNode());
                 }
                 //currentNode.setNextNode(currentNode.getNextNode().getNextNode());
