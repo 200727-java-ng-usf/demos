@@ -4,6 +4,7 @@ import com.revature.io.models.User;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -101,9 +102,17 @@ public class ReadFileDriver {
            }
         });
 
-        System.out.println("+-----------------------------------+");
+        System.out.println("+Using method reference sytnax-----------------------------------+");
         //method reference syntax
         // same restrictions as the lambda expression
         usersList.forEach(System.out::println); // method reference syntax
+
+        System.out.println("+Using Iterator-----------------------------------+");
+
+        Iterator<User> userIterator = usersList.iterator();
+
+        while(userIterator.hasNext()) {
+            System.out.println(userIterator.next());
+        }
     }
 }
