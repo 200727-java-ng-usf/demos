@@ -64,9 +64,14 @@ public class CustomLinkedList<T> {
      */
     public T poll() {
 
+        if (head == tail) {
+            tail = null;
+        }
+
         if (head != null) {
             T data = head.getData();
-            this.head = head.getNextNode();
+            head = head.getNextNode();
+
             return data;
         }
 
