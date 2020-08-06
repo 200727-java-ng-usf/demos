@@ -64,6 +64,10 @@ public class CustomLinkedList<T> {
      */
     public T poll() {
 
+        if (head == tail) {
+            tail = null;
+        }
+
         if (head != null) {
             T data = head.getData();
             head = head.getNextNode();
@@ -88,5 +92,52 @@ public class CustomLinkedList<T> {
             currentNode = currentNode.getNextNode();
         }
 
+    }
+
+    /**
+     * Removes the first occurrence of the provided data value in the linked list
+     * @param key
+     * @return a boolean value; true if a data node was removed and false if one was not
+     */
+    public boolean removeByKey(T key) {
+
+        // handle the scenario where the list is empty
+        if (this.head == null) {
+            return false;
+        }
+
+        // Create a reference to hold the current node
+        Node<T> currentNode = this.head;
+
+        // Create a reference to hold the next node (after currentNode)
+        Node<T> nextNode = currentNode.getNextNode();
+
+        // If the first node contains data equal to the key, remove that node
+        if (currentNode.getData().equals(key)) {
+            this.head = nextNode;
+            return true;
+        }
+
+        // iterate across the linked list while currentNode is not null
+        while (currentNode != null) {
+
+            // If the nextNode is not null and contains the data we want to delete
+            // then have the currentNode point to the node after nextNode
+            if (nextNode != null && nextNode.getData().equals(key)) {
+                currentNode.setNextNode(nextNode.getNextNode());
+                return true;
+            }
+
+            // advance currentNode to the next node in the list
+            currentNode = currentNode.getNextNode();
+
+            // if nextNode is not null, then advance the next to the one after it
+            if (nextNode != null) {
+                nextNode = nextNode.getNextNode();
+            }
+
+        }
+
+        return false;
     }
 }
