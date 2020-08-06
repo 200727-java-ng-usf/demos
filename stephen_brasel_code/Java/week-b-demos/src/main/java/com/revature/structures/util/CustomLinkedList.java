@@ -101,6 +101,30 @@ public class CustomLinkedList<T> {
         return false;
     }
 
+//    /** Removes all duplicates of a provided data value - leaving only one node with that value
+//     *
+//             * @param dataValue
+//     */
+//    public void removeDuplicatesOf(T dataValue) {
+//        Node<T> currentNode = this.head;
+//        int intCounter = 0;
+//        if (currentNode.getData() == dataValue) {
+//            intCounter++;
+//        }
+//
+//        while (currentNode != null) {
+//            if (currentNode.getNextNode() != null) {
+//                if (currentNode.getNextNode().getData() == dataValue) {
+//                    intCounter++;
+//                    if (intCounter > 1 || currentNode.getNextNode().getNextNode() != null) {
+//                        currentNode.setNextNode(currentNode.getNextNode().getNextNode());
+//                    }
+//                }
+//            }
+//            currentNode = currentNode.getNextNode();
+//        }
+//
+//    }
     /**
      * Removes all duplicates of a provided data value - leaving only one node with that value
      * @param dataValue
@@ -108,19 +132,24 @@ public class CustomLinkedList<T> {
     public void removeDuplicatesOf(T dataValue) {
         // Ensure list ONLY CONTAINS Unique Values
         Node<T> currentNode = this.head;
+        Node<T> prevNode;
         int uniqueCount = 0;
 
         if(currentNode.getData() == dataValue){
             uniqueCount++;
         }
+        prevNode = currentNode;
+        currentNode = currentNode.getNextNode();
 
         while(currentNode != null){
-            if(currentNode.getNextNode() != null && currentNode.getNextNode().getData() == dataValue){
+            if(currentNode.getData() == dataValue){
                 uniqueCount++;
                 if(uniqueCount > 1) {
-                    currentNode.setNextNode(currentNode.getNextNode().getNextNode());
+                    prevNode.setNextNode(currentNode.getNextNode());
+                    currentNode = prevNode;
                 }
             }
+            prevNode = currentNode;
             currentNode = currentNode.getNextNode();
         }
     }
