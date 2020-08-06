@@ -58,11 +58,19 @@ public class CustomLinkedList<T> {
      * Queue Methods
      */
     public T poll(){
-        if(head != null){
+        if(head != null ){
+
             T data = head.getData();
-            head = head.getNextNode();
+            if(head.getNextNode() == null){
+                tail = null;
+
+            }
+            this.head = head.getNextNode();
+
             return data;
         }
+
+
         return null;
     }
     /**
@@ -76,4 +84,41 @@ public class CustomLinkedList<T> {
             currentNode = currentNode.getNextNode();
         }
     }
+    /**
+     * Removes the first occurrence of the provided data value in the linked list
+     * @param dataValue
+     * @return a boolean value; true if a data node was removed and false if one was not
+     */
+
+
+
+        public boolean removeByKey(T dataValue) {
+        Node<T> currentNode = this.head;
+        Node<T> temp = new Node<>(dataValue, null);
+
+        while (currentNode != null && currentNode.getNextNode() != null){
+
+            if(currentNode.getNextNode().getData() == dataValue){
+
+//
+                currentNode.getNextNode() = currentNode.getNextNode().getNextNode();
+                //currentNode.setNextNode(currentNode.getNextNode());
+                System.out.println("The data is in the list");
+                //currentNode = currentNode.getNextNode();
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+    /**
+     * Removes all duplicates of a provided data value - leaving only one node with that value
+     * @param dataValue
+     */
+    public void removeDuplicatesOf(T dataValue) {
+
+    }
+
 }
+

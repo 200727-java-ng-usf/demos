@@ -18,10 +18,17 @@ public class LinkedListDriver {
 
         stringList.printList();
         System.out.println("++---------------------++");
+        stringList.poll();
+        stringList.printList();
 
-        System.out.println(stringList.peek()); //test1
-        System.out.println(stringList.peek()); //test1
-        System.out.println(stringList.poll());//test1
-        System.out.println(stringList.poll());//test9
+        //System.out.println(stringList.peek()); //test1
+//        System.out.println(stringList.peek()); //test1
+//        System.out.println(stringList.poll());//test1
+//        System.out.println(stringList.poll());//test9
+
+        boolean isItThere = stringList.removeByKey("terst4");
+        System.out.println(isItThere);
+//
+
     }
 }
