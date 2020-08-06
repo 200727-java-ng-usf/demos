@@ -98,6 +98,7 @@ public class CustomLinkedList<T> {
      * @return a boolean value; true if a data node was removed and false if one was not
      */
     public boolean removeByKey(T dataValue) {
+        if (head == null) return false;
         Node<T> currentNode = this.head;
 
         if (currentNode.getData() == dataValue) {
@@ -123,23 +124,32 @@ public class CustomLinkedList<T> {
      * @param dataValue
      */
     public void removeDuplicatesOf(T dataValue) {
+        // Ensure list ONLY CONTAINS Unique Values
         Node<T> currentNode = this.head;
+        Node<T> prevNode;
         int intCounter = 0;
-        if (currentNode.getData() == dataValue) {
-            intCounter++;
-        }
+        if (head != null) {
 
-        while (currentNode != null) {
-            if (currentNode.getNextNode() != null) {
-                if (currentNode.getNextNode().getData() == dataValue) {
-                    intCounter++;
-                    if (intCounter > 1 || currentNode.getNextNode().getNextNode() != null) {
-                        currentNode.setNextNode(currentNode.getNextNode().getNextNode());
-                    }
-                }
+
+            if (currentNode.getData() == dataValue) {
+                intCounter++;
             }
+            prevNode = currentNode;
             currentNode = currentNode.getNextNode();
-        }
 
+            while (currentNode != null) {
+                if (currentNode.getData() == dataValue) {
+                    intCounter++;
+                    if (intCounter > 1) {
+                        prevNode.setNextNode(currentNode.getNextNode());
+                        currentNode = prevNode;
+                    }
+
+                }
+                prevNode = currentNode;
+                currentNode = currentNode.getNextNode();
+            }
+
+        }
     }
 }
