@@ -48,9 +48,12 @@ public class CustomLinkedList<T> {
 
     }
     public T poll(){
-        if (head != null){
+        if (head != null && tail !=null){
             T data = head.getData();
             head = head.getNextNode();
+            tail = tail.getNextNode();
+
+
             return data;
         }return null;
     }
@@ -62,6 +65,24 @@ public class CustomLinkedList<T> {
             System.out.println("Node value: " + currentNode.getData());
             currentNode = currentNode.getNextNode();
         }
+    }
+    //method for removing duplicates
+
+    public void removeDups(){
+        Node<T> currentNode = this.head;
+        while(currentNode != null){
+            //System.out.println("Node: "+ currentNode.getData());
+            T targetData = currentNode.getData();
+
+            if(currentNode.getData().equals(targetData)){
+                deleteNode(currentNode);
+            }
+            currentNode = currentNode.getNextNode();
+        }
+    }
+    public void deleteNode(Node T){
+        T = T.getNextNode();
+        System.out.println(T+"Deleted");
     }
 
 }
