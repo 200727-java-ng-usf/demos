@@ -91,7 +91,7 @@ public class CollectionsDriver {
         userMap.put("cyanoso", u);
         userMap.put(null, null);
         userMap.put("skelsey", new User(42, "skelsey", "manager"));
-        userMap.put("kelsey1", new User(45, "skelsey", "manager"));
+        userMap.put("elsey1", new User(45, "skelsey", "manager"));
         User thisUser = userMap.get("cyanoso");
         System.out.println(thisUser);
         System.out.println("+------------------------+");
