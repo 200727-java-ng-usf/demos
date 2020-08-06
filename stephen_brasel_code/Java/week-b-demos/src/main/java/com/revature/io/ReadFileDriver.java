@@ -5,7 +5,9 @@ import com.revature.io.models.User;
 import java.io.*;
 import java.nio.Buffer;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class ReadFileDriver {
     public static void main(String[] args) {
@@ -87,11 +89,34 @@ public class ReadFileDriver {
 
         System.out.println("+-----------------------+");
 
+        // can onlybe used with functional interfaces
+        // (one and onle one abstr5act method; static/defaults don't count
+
+        // :IMPORTANT: A lambda expression is the inline implementation of a functional interface's one abstract method
         usersList.forEach(user -> System.out.println(user)); // lambda expression syntax (Java 8+)
+
+        // before Java 8,. and hte intro of lambda expressions, this is what we had to do before
+        // this example leverages a "local anonymous class"
+        // QC shouldn't ask for this, its an OCP topic (OPTIONAL TO KNOW, but GOOD TO KNOW)
+        usersList.forEach(new Consumer<User>() {
+            @Override
+            public void accept(User user) {
+                System.out.println(user);
+            }
+        });
 
         System.out.println("+-----------------------+");
 
         usersList.forEach(System.out::println); // method reference syntax (Java 8+)
+
+        System.out.println("+-----------------------+");
+
+        Iterator<User> userIterator = usersList.iterator();
+
+        System.out.println("Iterator");
+        while (userIterator.hasNext()){
+            System.out.println(userIterator.next());
+        }
     }
 
 }
