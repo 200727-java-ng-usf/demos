@@ -97,9 +97,9 @@ public class CustomLinkedList<T> {
     }
     public void remove(String value) {
         Node checker = head;
-        removeRecursive(value,checker);
+        removeRecursive(value,checker, null);
     }
-    public void removeRecursive(String value, Node checker){
+    public void removeRecursive(String value, Node checker, Node previous){
     String identifier = "";
         if (head == null){
             identifier = "empty";
@@ -113,14 +113,15 @@ public class CustomLinkedList<T> {
                 System.out.println("The list is empty");
                 break;
             case "next":
+                previous = head;
                 head = head.getNextNode();
-                removeRecursive(value, checker);
+                removeRecursive(value, checker, previous);
                 break;
             case "found":
                 if(head == tail){
                     tail = null;
                 }
-                 head = head.getNextNode();
+                previous.setNextNode(head.getNextNode());
                 System.out.println( value + " was found and first instance removed from list");
                 head = checker;
                 break;
