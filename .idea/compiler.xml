@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="day4-demos" />
+        <module name="week-b-demos" />
+        <module name="maven-demo" />
+        <module name="day5-demos" />
+        <module name="FunWithMatt" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="day4-demos" target="1.8" />
+      <module name="day5-demos" target="1.8" />
+      <module name="FunWithMatt" target="1.8" />
+      <module name="maven-demo" target="1.5" />
+      <module name="week-b-demos" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
