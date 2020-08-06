@@ -66,13 +66,14 @@ public class CustomLinkedList<T> {
 
         if (head != null) {
             T data = head.getData();
-
-            head = head.getNextNode();
+            this.head = head.getNextNode();
             return data;
         }
 
         return null;
     }
+
+
 
     /**
      * convenience method for printing out our list's contents

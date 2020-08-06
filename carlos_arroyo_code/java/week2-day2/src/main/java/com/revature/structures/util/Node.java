@@ -10,6 +10,12 @@ public class Node<T> {
         this.nextNode = nextNode;
     }
 
+    public boolean removeByKey(T dataValue) {
+
+
+        return false;
+    }
+
     public T getData() {
         return data;
     }
@@ -25,4 +31,5 @@ public class Node<T> {
     public void setNextNode(Node<T> nextNode) {
         this.nextNode = nextNode;
     }
+
 }

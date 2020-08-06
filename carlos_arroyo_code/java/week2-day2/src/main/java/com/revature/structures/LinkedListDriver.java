@@ -12,6 +12,7 @@ public class LinkedListDriver {
         stringList.insert("test1");
         stringList.insert("test2");
         stringList.insert("test3");
+        stringList.insert("test3");
         stringList.insert("test4");
         stringList.insert("test5");
         stringList.insert("test6");
