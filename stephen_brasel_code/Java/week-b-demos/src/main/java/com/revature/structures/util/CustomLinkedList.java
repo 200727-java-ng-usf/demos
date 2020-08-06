@@ -84,6 +84,7 @@ public class CustomLinkedList<T> {
      * @return a boolean value; true if a data node was removed and false if one was not
      */
     public boolean removeByKey(T dataValue) {
+    	if(head == null) return false;
         Node<T> currentNode = this.head;
 
         if(currentNode.getData() == dataValue){
