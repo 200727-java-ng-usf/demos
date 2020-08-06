@@ -89,22 +89,25 @@ public class CustomLinkedList<T> {
      * @param dataValue
      * @return a boolean value; true if a data node was removed and false if one was not
      */
+    public boolean removeByKey(T dataValue) {
 
-
-
-        public boolean removeByKey(T dataValue) {
+        //empty
+        if(this.head == null){
+            return false;
+        }
         Node<T> currentNode = this.head;
+        Node<T> nextNode = this.head.getNextNode();
         Node<T> temp = new Node<>(dataValue, null);
 
-        while (currentNode != null && currentNode.getNextNode() != null){
+        while (head != null && head.getNextNode() != null){
 
-            if(currentNode.getNextNode().getData() == dataValue){
+            if(currentNode.getData() == dataValue){
 
 //
-                currentNode.getNextNode() = currentNode.getNextNode().getNextNode();
+                currentNode.setNextNode(currentNode.getNextNode().getNextNode());
                 //currentNode.setNextNode(currentNode.getNextNode());
                 System.out.println("The data is in the list");
-                //currentNode = currentNode.getNextNode();
+                this.head = currentNode.getNextNode();
 
                 return true;
             }
