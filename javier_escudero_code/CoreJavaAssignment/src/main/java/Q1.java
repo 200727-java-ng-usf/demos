@@ -1,5 +1,6 @@
+// Q1.java
 public class Q1 {
-    public void bubbleSort(int[] arr) {
+    public int[] bubbleSort(int[] arr) {
         int n = arr.length;
         int temp = 0;
         for(int i=0; i < n; i++){
@@ -12,5 +13,6 @@ public class Q1 {
                 }
             }
         }
+        return arr; // returns the sorted array
     }
 }
