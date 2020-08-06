@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65a7feb0-7ded-4cad-bfe9-8bb67e0eaa36" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../CoreJavaAssignment/src/main/java/Q1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CoreJavaAssignment/src/main/java/Q1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CoreJavaAssignment/src/test/java/Q1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CoreJavaAssignment/src/test/java/Q1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CoreJavaAssignment/target/classes/Q1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CoreJavaAssignment/target/classes/Q1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CoreJavaAssignment/target/test-classes/Q1Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CoreJavaAssignment/target/test-classes/Q1Test.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CoreJavaAssignment/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../CoreJavaAssignment/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/collections/CollectionDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/collections/CollectionsDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/collections/CollectionDriver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/collections/CollectionsDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/collections/CollectionsDriver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +136,7 @@
       <workItem from="1596555245528" duration="4429000" />
       <workItem from="1596567479286" duration="895000" />
       <workItem from="1596636429252" duration="363000" />
-      <workItem from="1596636815117" duration="15088000" />
+      <workItem from="1596636815117" duration="16628000" />
     </task>
     <servers />
   </component>
@@ -170,22 +168,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1596648417958" />
-    <state width="936" height="162" key="GridCell.Tab.0.bottom" timestamp="1596663345760">
+    <state width="936" height="245" key="GridCell.Tab.0.bottom" timestamp="1596718651491">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="936" height="162" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596663345760" />
-    <state width="936" height="162" key="GridCell.Tab.0.center" timestamp="1596663345760">
+    <state width="936" height="245" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596718651491" />
+    <state width="936" height="245" key="GridCell.Tab.0.center" timestamp="1596718651491">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="936" height="162" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596663345760" />
-    <state width="936" height="162" key="GridCell.Tab.0.left" timestamp="1596663345759">
+    <state width="936" height="245" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596718651491" />
+    <state width="936" height="245" key="GridCell.Tab.0.left" timestamp="1596718651491">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="936" height="162" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596663345759" />
-    <state width="936" height="162" key="GridCell.Tab.0.right" timestamp="1596663345760">
+    <state width="936" height="245" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596718651491" />
+    <state width="936" height="245" key="GridCell.Tab.0.right" timestamp="1596718651491">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="936" height="162" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596663345760" />
+    <state width="936" height="245" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596718651491" />
     <state x="555" y="60" key="SettingsEditor" timestamp="1596555574851">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -194,9 +192,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="209" y="73" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1596568361716" />
-    <state x="771" y="146" key="search.everywhere.popup" timestamp="1596663312938">
+    <state x="656" y="134" width="672" height="678" key="search.everywhere.popup" timestamp="1596717958543">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="771" y="146" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1596663312938" />
+    <state x="656" y="134" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1596717958543" />
   </component>
 </project>

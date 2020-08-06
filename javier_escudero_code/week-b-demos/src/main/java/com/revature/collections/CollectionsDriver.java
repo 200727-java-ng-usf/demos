@@ -68,8 +68,8 @@ public class CollectionsDriver {
                 -"double-ended" queues
                 - insert and removal operations can be performed on both ends of the structure
          */
-        ArrayDeque<User> userArrayDeque = new ArrayDeque<>();
-        userArrayDeque.add(u);
+        ArrayDeque<User> userDeque = new ArrayDeque<>();
+        userDeque.add(u);
         userDeque.add(new User(35, "bkruppa", "javascript"));
         System.out.println("_______________________________");
 
@@ -101,6 +101,6 @@ public class CollectionsDriver {
             }
 
             Iterator<Map.Entry<String, User>> mapEntries = userMap.entrySet().iterator();
-            while (mapEntries)
+            //while (mapEntries)
     }
 }

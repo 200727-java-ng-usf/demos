@@ -1,8 +1,9 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-# Datasource local storage ignored files
-/../../../../../../../../../:\Users\p_roc\Documents\200727-java-ng-usf\demos\javier_escudero_code\CoreJavaAssignment\.idea/dataSources/
-/dataSources.local.xml
-# Editor-based HTTP Client requests
-/httpRequests/
+# IDE-specific files and folders
+.idea/
+*.iml
+
+# Build folders and files
+target/
+*.class
+
+out/
