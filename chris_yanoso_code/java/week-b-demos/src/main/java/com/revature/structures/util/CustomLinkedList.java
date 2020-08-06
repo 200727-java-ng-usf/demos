@@ -120,10 +120,12 @@ public class CustomLinkedList<T> {
             case "found":
                 if(head == tail){
                     tail = null;
-                }
-                previous.setNextNode(head.getNextNode());
+                } else if (previous != null) {
+                    previous.setNextNode(head.getNextNode());
+                    head = checker;
+                } else{
+                head = head.getNextNode();}
                 System.out.println( value + " was found and first instance removed from list");
-                head = checker;
                 break;
 
 
