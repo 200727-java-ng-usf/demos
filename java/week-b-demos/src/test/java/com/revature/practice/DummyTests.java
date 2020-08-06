@@ -53,12 +53,14 @@ public class DummyTests {
     }
 
     @Test(expected = FileNotFoundException.class)
-    public void testMyOtherMethod() {
+    public void testMyOtherMethod() throws FileNotFoundException {
         System.out.println("This is yet another basic test method; this one doesn't actually test anything though");
+        throw new FileNotFoundException();
     }
 
     @Ignore("test not finished, will come back to it")
     public void ignoreThisTest() {
         System.out.println("This test may not be finished, so we will ignore it for now.");
     }
+
 }
