@@ -1,0 +1,8 @@
+1: cstalesky:passw0rd
+2: skelsey:manager
+3: bkruppa:javascript
+4: rconnel:java
+5:mknighten:rolltide
+5:mknighten:rolltide
+5:mknighten:rolltide
+5:mknighten:rolltide
