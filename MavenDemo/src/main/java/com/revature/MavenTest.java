@@ -1,13 +1,15 @@
 package com.revature;
 
+import java.util.Scanner;
+
 public class MavenTest {
     public static void main(String[] args) {
-        System.out.println("first maven project");
+        String b = "bbb";
+        int a = 65;
+        System.out.printf("%03d%n",a);
 
-        Question1 message1 = new Question1("123");
-        System.out.println(message1.toString());
-
-        int i1 = Integer.parseInt(message1.getName());
+        Scanner sc = new Scanner(System.in);
+        
 
 
 
