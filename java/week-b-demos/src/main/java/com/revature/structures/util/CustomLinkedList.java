@@ -99,45 +99,65 @@ public class CustomLinkedList<T> {
      * @param key
      * @return a boolean value; true if a data node was removed and false if one was not
      */
-    public boolean removeByKey(T key) {
+//    public boolean removeByKey(T key) {
+//
+//        // handle the scenario where the list is empty
+//        if (this.head == null) {
+//            return false;
+//        }
+//
+//        // Create a reference to hold the current node
+//        Node<T> currentNode = this.head;
+//
+//        // Create a reference to hold the next node (after currentNode)
+//        Node<T> nextNode = currentNode.getNextNode();
+//
+//        // If the first node contains data equal to the key, remove that node
+//        if (currentNode.getData().equals(key)) {
+//            this.head = nextNode;
+//            return true;
+//        }
+//
+//        // iterate across the linked list while currentNode is not null
+//        while (currentNode != null) {
+//
+//            // If the nextNode is not null and contains the data we want to delete
+//            // then have the currentNode point to the node after nextNode
+//            if (nextNode != null && nextNode.getData().equals(key)) {
+//                currentNode.setNextNode(nextNode.getNextNode());
+//                return true;
+//            }
+//
+//            // advance currentNode to the next node in the list
+//            currentNode = currentNode.getNextNode();
+//
+//            // if nextNode is not null, then advance the next to the one after it
+//            if (nextNode != null) {
+//                nextNode = nextNode.getNextNode();
+//            }
+//
+//        }
+//
+//        return false;
+//    }
 
-        // handle the scenario where the list is empty
-        if (this.head == null) {
-            return false;
-        }
-
-        // Create a reference to hold the current node
-        Node<T> currentNode = this.head;
-
-        // Create a reference to hold the next node (after currentNode)
-        Node<T> nextNode = currentNode.getNextNode();
-
-        // If the first node contains data equal to the key, remove that node
-        if (currentNode.getData().equals(key)) {
-            this.head = nextNode;
+    public boolean removeByKey(T dataValue) {
+        if(head.getData() == dataValue){
+            head = head.getNextNode();
+            if(head.getNextNode() == null) {
+                tail = null;
+                head = null;
+            }
             return true;
         }
-
-        // iterate across the linked list while currentNode is not null
-        while (currentNode != null) {
-
-            // If the nextNode is not null and contains the data we want to delete
-            // then have the currentNode point to the node after nextNode
-            if (nextNode != null && nextNode.getData().equals(key)) {
-                currentNode.setNextNode(nextNode.getNextNode());
+        Node<T> currentNode = head;
+        while(currentNode.getNextNode() != null) {
+            if (currentNode.getNextNode().getData() == dataValue) {
+                currentNode.setNextNode(currentNode.getNextNode().getNextNode());
                 return true;
             }
-
-            // advance currentNode to the next node in the list
             currentNode = currentNode.getNextNode();
-
-            // if nextNode is not null, then advance the next to the one after it
-            if (nextNode != null) {
-                nextNode = nextNode.getNextNode();
-            }
-
         }
-
         return false;
     }
 }

@@ -27,7 +27,7 @@ public class LinkedListDriver {
         System.out.println(stringList.poll()); // test1
         System.out.println(stringList.poll()); // test2
 
-        String key = "test5";
+        String key = "test3";
         boolean wasRemoved = stringList.removeByKey(key);
 
         if (wasRemoved) {
