@@ -7,15 +7,17 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
 
 public class ReadFileDriver {
 
     public static void main(String[] args) {
-        //create a file object and use the relative path of the text file
+
+        // create a File object, and use the relative path of the text file
         File happyText = new File("src/main/resources/happy-text.txt");
-        //if currentLine = null, we reached the end of the file
+
         if (!happyText.exists()) {
             return;
         }
@@ -25,24 +27,21 @@ public class ReadFileDriver {
             BufferedReader reader = new BufferedReader(new FileReader(happyText));
             String currentLine = reader.readLine();
 
+            // if currentLine == null, then we have reached the end of the file
             while (currentLine != null) {
-                System.out.println(currentLine);
-                currentLine = reader.readLine();
+                System.out.println(currentLine); // print out currentLine
+                currentLine = reader.readLine(); // move to next line in file
             }
-
-            // "\n" an escape literal
-            // \t \r , ect
 
         } catch (IOException ioe) {
             ioe.printStackTrace();
-            System.out.println("An exception occured while reading this file.");
-
+            System.out.println("An exception occurred while reading the file.");
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Something went wrong...");
         }
 
-        System.out.println("~-----------------------------~");
+        System.out.println("+-------------------------+");
 
         File users = new File("src/main/resources/users.txt");
         List<User> usersList = new ArrayList<>();
@@ -53,56 +52,80 @@ public class ReadFileDriver {
             String currentLine = reader.readLine();
 
             while (currentLine != null) {
-                //read the line, split into a String[] containing user field values
+
+                // read the line, split it into a String[] containing user field values
                 String[] userFields = currentLine.split(":");
 
-                //Create a user object and begin setting its field values using the String[]
+                // Create a user object and begin setting its field values using the String[]
                 User user = new User();
                 user.setId(Integer.parseInt(userFields[0]));
                 user.setUsername(userFields[1]);
                 user.setPassword(userFields[2]);
 
-                //add to list of users
+                // add the created user to our list of users
                 usersList.add(user);
 
-                //goto next line
+                // tell our reader to move to the next line
                 currentLine = reader.readLine();
 
             }
-            reader.close(); //good practice to release connection to the file
+
+            reader.close(); // good practice to release connection to the file
 
         } catch (IOException ioe) {
             ioe.printStackTrace();
-            System.out.println("An exception occurred while reading this file.");
-
+            System.out.println("An exception occurred while reading the file.");
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Something went wrong...");
         }
 
-        // iterate across our list of users and print each one out to console
-        for(User user : usersList) {
-            System.out.println(user);
+        // iterate across our list of users and print each one out to the console
+
+        // traditional for loop (any version of Java)
+        for (int i = 0; i < usersList.size(); i++) {
+            System.out.println(usersList.get(i));
         }
-        System.out.println("~----------------------~");
-        //lambda expression syntax
-        //can only be used with functional interfaces (one and only one abstract method, abstract/defaults dont count)
-        // in line implementation of a functional interfaces one abstract method
+
+        System.out.println("+-------------------------+");
+
+        // for-each loop (aka enhanced for loop) (Java 5+)
+        for (User u : usersList) {
+            System.out.println(u);
+        }
+
+        System.out.println("+-------------------------+");
+
+        // lambda expression syntax (Java 8+)
+        // can only be used with functional interfaces (one and only one abstract method; static/defaults don't count)
+
+        // A lambda expression is the inline implementation of a functional interface's one abstract method
         usersList.forEach(user -> System.out.println(user));
 
-        System.out.println("~----------------------~");
+        System.out.println("+-------------------------+");
 
-        usersList.forEach(System.out::println); //method reference syntax
-
-        //before java 8 amd intro of lambda expressions, this is what we had to do before
-        // local anonymous class
-        //OCP topic
+        // before Java 8, and the intro of lambda expressions; this is what we had to do before
+        // this example leverages a "local anonymous class"
+        // QC shouldn't ask about this; its an OCP topic (OPTIONAL)
         usersList.forEach(new Consumer<User>() {
             @Override
             public void accept(User user) {
-
+                System.out.println(user);
             }
         });
+
+        System.out.println("+-------------------------+");
+
+        // same restrictions as the lambda expression
+        usersList.forEach(System.out::println); // method reference syntax (Java 8+)
+
+        System.out.println("+------------------------|+");
+
+        Iterator<User> userIterator = usersList.iterator();
+
+        while(userIterator.hasNext()) {
+            System.out.println(userIterator.next());
+        }
     }
 
 }
