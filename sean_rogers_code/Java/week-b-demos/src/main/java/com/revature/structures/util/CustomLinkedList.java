@@ -91,6 +91,7 @@ public class CustomLinkedList<T> {
      */
     public void removeDuplicatesOf(T dataValue) {
         boolean dataValueFound = false;
+        Node<T> potentialTail = null;
         if(head.getData() == dataValue){
             //head = head.getNextNode();
             dataValueFound = true;
@@ -106,7 +107,7 @@ public class CustomLinkedList<T> {
                 if(!dataValueFound) {
                     dataValueFound = true;
                 } else {
-                    if(currentNode.getNextNode().getNextNode() == null)
+                    potentialTail = currentNode;
                     currentNode.setNextNode(currentNode.getNextNode().getNextNode());
                 }
                 //currentNode.setNextNode(currentNode.getNextNode().getNextNode());
@@ -114,6 +115,7 @@ public class CustomLinkedList<T> {
             }
             currentNode = currentNode.getNextNode();
             if(currentNode == null) {
+                tail = potentialTail;
                 break;
             }
         }

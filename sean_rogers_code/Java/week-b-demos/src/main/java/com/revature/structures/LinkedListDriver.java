@@ -18,10 +18,11 @@ public class LinkedListDriver {
         stringList.insert("test9");
         stringList.insert("test3");
         stringList.insert("test13");
+        stringList.insert("test3");
         stringList.printList();
 
-        stringList.removeByKey("test13");
-        //stringList.removeDuplicatesOf("test3");
+        //stringList.removeByKey("test13");
+        stringList.removeDuplicatesOf("test3");
         System.out.println();
         stringList.printList();
 
