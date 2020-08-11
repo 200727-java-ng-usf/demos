@@ -46,10 +46,9 @@ public class CustomLinkedList<T> {
         if(head !=null){
             T data = head.getData();
             head = head.getNextNode();
-            //tail = tail.getNextNode();
-//            if(head.getData().equals(null)){
-//                tail.setData(null);
-//            }
+            if(head==null){
+                tail=null;
+            }
             return data;
         }
         return null;
@@ -79,8 +78,9 @@ public class CustomLinkedList<T> {
                 }
                 currentNode = currentNode.getNextNode();
             }
-            //if
-            currentNode = currentNode.getNextNode();
+
+                currentNode = currentNode.getNextNode();
+
         }
     }
     public void deleteNode(Node T){
