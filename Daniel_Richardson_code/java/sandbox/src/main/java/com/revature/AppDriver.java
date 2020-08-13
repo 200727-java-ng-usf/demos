@@ -46,6 +46,14 @@ public class AppDriver {
 //        FileWriterSandbox.writer();
 
 
+        if(args.length <=0){
+            System.out.println("No arguments provided");
+        } else {
+            for(String arg:args){
+                System.out.println("Provided arguments: "+arg);
+            }
+        }
+
 
     }
 }
