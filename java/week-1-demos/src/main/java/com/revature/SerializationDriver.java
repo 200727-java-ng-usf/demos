@@ -44,7 +44,6 @@ public class SerializationDriver {
                     - To serialize, use: ObjectOutputSteam.writeObject(Object o)
                     - To de-serialize, use: ObjectInputStream.readObject()
 
-
      */
     public static void serializeUser(AppUser user) {
 
