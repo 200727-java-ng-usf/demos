@@ -52,6 +52,9 @@ public class CustomLinkedList<T> {
         if(head!=null){
             T data = head.getData();
             head = head.getNextNode();
+            if (head == null){
+                tail = null;
+            }
             return data;
         }
         return null;

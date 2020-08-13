@@ -17,11 +17,11 @@ public class LinkedListDriver {
 
         System.out.println("+--------------------------------------+");
 
-//        System.out.println(stringList.peek());
-//        System.out.println(stringList.poll());
-//        System.out.println(stringList.poll());
-//        System.out.println(stringList.poll());
-//        System.out.println(stringList.poll());
+        System.out.println(stringList.peek());
+        System.out.println(stringList.poll());
+        System.out.println(stringList.poll());
+        System.out.println(stringList.poll());
+        System.out.println(stringList.poll());
 
         System.out.println("+----------------------------------------");
 
