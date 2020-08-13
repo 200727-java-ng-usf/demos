@@ -31,18 +31,6 @@ public class StringDriver {
 
         System.out.println("-------------------------------------");
 
-        // StringBuilder
-        StringBuilder sb2 = new StringBuilder("Hello!");
-        StringBuilder sb3 = new StringBuilder("Hello!");
-
-        System.out.println(sb2 == sb3); //false
-        System.out.println(sb2.equals(sb3)); //false!
-
-        sb2.append(" world!!");
-        System.out.println(sb2);
-
-        String s9 = sb2.toString();
-        System.out.println(s9);
 
         System.out.println("-------------------------------------");
 

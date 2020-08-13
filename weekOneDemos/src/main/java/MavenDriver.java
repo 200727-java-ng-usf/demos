@@ -1,2 +1,7 @@
-package PACKAGE_NAME;public class MavenDriver {
+public class MavenDriver {
+    public static void main(String[] args) {
+
+
+        System.out.println("aaaaaaaaa");
+    }
 }

@@ -1,2 +1,6 @@
-package com.revature.models;public class Explore {
+package com.revature.models;
+
+public class Explore {
+
+
 }
