@@ -7,15 +7,26 @@ public class LinkedListDriver {
         CustomLinkedList<String> stringList = new CustomLinkedList<String>();
         int num = 10;
         method1(stringList, num);
+//        peekTest(stringList, num);
 //        stringList.insert("test1");
 //        System.out.println(stringList.poll());
 //        System.out.println(stringList.poll());
     }
+    private static void peekTest(CustomLinkedList<String> stringList, int num) {
+        for (int i = 0; i < num; i++) {
+            stringList.insert("test" + i);
+        }
+
+        System.out.println("+----------------------------------+");
+        System.out.println(stringList.peek());
+        System.out.println(stringList.peek());
+        System.out.println("+----------------------------------+");
+        System.out.println(stringList.poll());
+        System.out.println(stringList.poll());
+    }
+
 
     private static void method1(CustomLinkedList<String> stringList, int num) {
-//        for (int i = 0; i < num; i++) {
-//            stringList.insert("test" + i);
-//        }
         stringList.insert("test1");
         stringList.insert("test1");
         stringList.insert("test3");

@@ -132,6 +132,7 @@ public class CustomLinkedList<T> {
      */
     public void removeDuplicatesOf(T dataValue) {
         // Ensure list ONLY CONTAINS Unique Values
+        if(head == null) return;
         Node<T> currentNode = this.head;
         Node<T> prevNode;
         int uniqueCount = 0;
