@@ -1,9 +1,6 @@
 package com.revature.util;
 
-import com.revature.patterns.Bolivar;
-import com.revature.patterns.Currency;
-import com.revature.patterns.Dollar;
-import com.revature.patterns.Euro;
+import com.revature.patterns.*;
 
 public class MoneyFactory {
 
@@ -21,5 +18,6 @@ public class MoneyFactory {
                 return new Bolivar();
 
         }
+        return new BitCoin();
     }
 }
