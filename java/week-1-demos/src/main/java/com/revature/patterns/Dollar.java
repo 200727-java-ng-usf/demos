@@ -7,4 +7,8 @@ public class Dollar implements Currency {
         return "USD";
     }
 
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("I'm being deleted! Good bye cruel world!");
+    }
 }

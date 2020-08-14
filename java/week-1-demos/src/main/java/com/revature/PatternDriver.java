@@ -22,6 +22,7 @@ public class PatternDriver {
         String country = "america";
         Currency usa = MoneyFactory.printMoney(country);
         System.out.println("USA Currency Symbol: " + usa.getSymbol());
+        usa = null;
 
         country = "venezuela";
         Currency vnzla = MoneyFactory.printMoney(country);
@@ -34,8 +35,6 @@ public class PatternDriver {
         country = "south korea";
         Currency skorea = MoneyFactory.printMoney(country);
         System.out.println("South Korea Currency Symbol: " + skorea.getSymbol());
-
-
 
     }
 
