@@ -5,6 +5,11 @@ public class Geode {
     private String name;
     private String color;
 
+    public Geode(String name, String color) {
+        this.name = name;
+        this.color = color;
+    }
+
     public String getName() {
         return name;
     }
@@ -19,5 +24,13 @@ public class Geode {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Geode{" +
+                "name='" + name + '\'' +
+                ", color='" + color + '\'' +
+                '}';
     }
 }
