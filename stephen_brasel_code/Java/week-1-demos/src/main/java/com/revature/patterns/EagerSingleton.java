@@ -25,6 +25,7 @@ public class EagerSingleton {
 	//Object supports cloning by default. Singletons should override that so multiple copies do not exist.
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
-		return new CloneNotSupportedException();
+		throw new CloneNotSupportedException();
+//		return new CloneNotSupportedException();
 	}
 }

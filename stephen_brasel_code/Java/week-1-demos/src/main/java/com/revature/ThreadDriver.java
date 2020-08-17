@@ -1,4 +1,7 @@
-package com.revature.threads;
+package com.revature;
+
+import com.revature.threads.MyThread;
+import com.revature.threads.Worker;
 
 public class ThreadDriver {
 
@@ -80,11 +83,12 @@ public class ThreadDriver {
 
 		 */
 
+		final long millis = 300L;
 		Thread t1 = new Thread(() -> {
 			Thread.currentThread().setName("t1");
 			for (int i = 0; i < 10; i++) {
 				try{
-				    Thread.sleep(3000L);
+				    Thread.sleep(millis);
 				} catch(InterruptedException e) {
 				    e.printStackTrace();
 				}
@@ -94,9 +98,9 @@ public class ThreadDriver {
 
 		Thread t2 = new Thread(() -> {
 			Thread.currentThread().setName("t2");
-			for (int i = 0; i < 10; i++) {
+			for (int i = 0; i < 11; i++) {
 				try{
-					Thread.sleep(3000L); // tells thread to wait for specific time in milliseconds
+					Thread.sleep(millis); // tells thread to wait for specific time in milliseconds
 				} catch(InterruptedException e) {
 					e.printStackTrace();
 				}
@@ -118,5 +122,15 @@ public class ThreadDriver {
 		} catch(InterruptedException e) {
 		    e.printStackTrace();
 		}
+
+		System.out.println("Main Done");
+		System.out.println("Main Done");
+		try {
+			t2.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Main 2 Done");
+		System.out.println("Main 2 Done");
 	}
 }

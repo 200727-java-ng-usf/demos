@@ -26,6 +26,6 @@ public class LazySingleton {
 	//Object supports cloning by default. Singletons should override that so multiple copies do not exist.
 	@Override
 	protected Object clone() throws CloneNotSupportedException {
-		return new CloneNotSupportedException();
+		throw new CloneNotSupportedException();
 	}
 }
