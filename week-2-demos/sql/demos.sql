@@ -259,7 +259,46 @@ from products;
 select*from products;
 
 -- Task for you: determine the purpose and usage of the GROUP BY keyword, and compare it to the ORDER BY keyword
+/*
+ * GROUP BY
+ * this claus divides records returned from a SELECT stateent into groups. With each group,
+ * we can appy some aggregate function to calculate some value for that group
+ */
+
+select department_id, count(department_id)as employee_count
+from employees
+group by department_id 
+order by department_id;
+
 -- Task for you: determine the purpose and usage of the HAVING clause, and compare it to the where clause
+
+
+/*
+ * Having clause
+ * 	Allows developers to pick out particular rows where some aggregate functions returned value
+ * meets some condition
+ * 
+ * syntax breakdown:
+ * 		SELECT
+ * 		FROM
+ * 		WHERE
+ * GROUP BY
+ * HAVING
+ * ORDER BY
+ * */
+
+/*
+ * Retrieve only departments whose smallest salary is than 2000/month or the highest
+ * salary is greater than 4000/month. display results in descending order by salary
+ * */
+select department_id, min(monthly_income) as min_income, max(monthly_income) as max_income
+from employees 
+group by department_id
+	having 
+		min(monthly_income) < 2000
+		or
+		max(monthly_income) > 4000
+order by min_income desc;
 
 
 /*
@@ -273,4 +312,123 @@ select*from products;
 
 commit;
 
+-- +------------------------------------------------------------------------------------+
 
+/**
+ * Set operations
+ * 
+ * operations which can used to manipulate result sets
+ * 
+ *  -UNION
+ * 	-UNION ALL
+ * 	-EXCEPT
+ * 	-INTERSECT
+ * 
+ * 
+ * /
+
+/*
+ * UNION
+ * used to combine result set of two or more queries
+ * it will also remove any duplicate records found in those queries. If you want preserve duplicates, use the UNION ALL
+ * 
+ * Rules for using UNION and UNION ALL:
+ * 
+ * 		+ All query result sets must have the SAME NUMBER OF COLUMNS
+ * 		+ The datatypes of each column must be compatible with their counterparts
+ * 
+ */*/
+ 
+-- Does not work (# of columns for each result set are different)
+select * from departments 
+union
+select department_id from employees;
+
+-- works, but note that duplicates were removed
+select id from departments 
+union
+select department_id from employees;
+
+--preserve duplicates with union all
+
+select id from departments 
+union all
+select department_id from employees;
+
+-- 
+
+
+
+/*
+ * 		EXCEPT
+ * 		Works by returning results that are found in RS#1 that are not also
+ * 		found in RS#2
+ * 
+ */
+--returns 2 
+select department_id
+from employees 
+where monthly_income between 2000 and 2500
+except
+select id 
+from departments 
+where monthly_budget > 15000;
+
+--1
+
+/*
+ * INTERSECT
+ * 
+ * Returns only the records which are included in the result sets of both queries. Also, duplicates are removed.
+ * 
+ * */
+
+
+select id
+from departments 
+where monthly_budget > 15000
+intersect
+select department_id
+from employees 
+where monthly_income between 2000 and 2500;
+
+
+
+/*
+ *  JOIN Operations
+ * 
+ * 		-INNER JOIN
+ * 		-OUTER JOIN
+ * 		-LEFT JOIN
+ * 		-RIGHT JOIN
+ * 		-CROSS JOIN
+ * 		-self JOIN
+ * 
+ * 
+ */
+
+--INNER JOIN implicit
+
+select l.id, l.first_name, a.name
+from employees l
+join departments a
+on l.dept_id = a.id
+order by l.id;
+
+alter table employees 
+rename column department_id
+to dept_id;
+
+alter table departments
+rename column id
+to dept_id;
+
+select * from employees;
+select * from departments;
+
+-- Natural join can use the USING key word; only works when the two tables being joined have a column name that is shared.
+select l.id, l.first_name, a.name
+from employees l
+join departments a
+using (dept_id)
+order by l.id;
