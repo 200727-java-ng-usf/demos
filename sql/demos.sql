@@ -248,7 +248,48 @@ select count(abbr_name)
 from products; -- 3; count() only counts non-null values
 
 -- Task for you: determine the purpose and usage of the GROUP BY keyword, and compare it to the ORDER BY keyword
--- Task for you: determine the purpose and usage of the HAVING clause, and compare it to the where clause
+
+/*
+ * GROUP BY
+ * 
+ * 		This clause divides records returned from a SELECT statement into groups. With each group,
+ * 		we can apply some aggregate function to calculate some value for that group.
+ */
+select department_id, count(department_id) as employee_count -- column alias
+from employees
+group by department_id
+order by department_id;
+
+-- Task for you: determine the purpose and usage of the HAVING clause, and compare it to the WHERE clause
+
+/*
+ * HAVING clause
+ * 		
+ * 		Allows developers to pick out particular rows where some aggregate function's returned value
+ * 		meets some condition.
+ * 
+ * 		syntax breakdown:
+ * 			SELECT ...
+ * 			FROM ...
+ * 			WHERE ...
+ * 			GROUP BY ...
+ * 			HAVING ...
+ * 			ORDER BY ...
+ */
+
+/*
+ * Retrieve only departments whose smallest salary is less than 2000/month or 
+ * the highest salary is greater than 4000/month. Display results in descending
+ * order by salary.
+ */
+select department_id, min(monthly_income) as min_income, max(monthly_income) as max_income
+from employees
+group by department_id
+	having 
+		min(monthly_income) < 2000
+		or 
+		max(monthly_income) > 4000
+order by min_income desc; -- use the column alias as apart of the ORDER BY clause
 
 /*
 	Logical Operators:
@@ -258,3 +299,4 @@ from products; -- 3; count() only counts non-null values
 			+ https://www.postgresql.org/docs/9.1/functions-logical.html
 			+ https://www.postgresql.org/docs/9.1/functions-comparison.html
 */
+
