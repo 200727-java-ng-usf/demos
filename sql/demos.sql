@@ -208,3 +208,73 @@ from products;
 
 
 
+select department_id, count(department_id) as employee_count
+from employees 
+group by department_id
+order by department_id;
+
+
+select department_id, count(department_id) as employee_count
+from employees 
+group by department_id
+order by department_id;
+
+
+select department_id, min(monthly_income) as min_income, max(monthly_income) as max_income
+from employees
+group by department_id
+having 
+		min(monthly_income ) < 2000
+		or 
+		max(monthly_income ) > 4000
+order by min_income desc;
+
+
+select id from departments d
+union all
+select department_id from employees e;
+
+
+select id from departments d
+union all
+select department_id from employees e;
+
+
+select id
+from departments d 
+where monthly_budget > 15000
+except
+select  department_id d
+from employees e
+where monthly_income between 2000 and 2500;
+
+select id
+from departments d 
+where monthly_budget > 15000
+intersect 
+select department_id
+from employees e 
+where monthly_income between 2000 and 2500;
+
+
+select e.id, e.first_name, d.name
+from employees e
+join departments d
+on e.department_id = d.id;
+
+alter table employees 
+rename column department_id
+to dept_id;
+
+alter table departments 
+rename column id
+to dept_id;
+
+select * from employees;
+select * from departments;
+
+select e.id, e.first_name, d.name
+from employees e
+inner join departments d
+using (dept_id);
+
