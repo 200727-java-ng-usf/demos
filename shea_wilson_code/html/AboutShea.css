@@ -1,0 +1,17 @@
+header {
+    font-size: 5em;
+    color: brown;
+
+}
+
+article {
+    font-style: italic;
+}
+
+footer{
+    height: 5em;
+}
+
+::backdrop {
+    color: chocolate;
+}
