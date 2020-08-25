@@ -395,7 +395,7 @@ select id
 from departments d 
 where monthly_budget > 15000;
 
---1
+-- 1
 select id 
 from departments d 
 where monthly_budget > 15000
@@ -603,8 +603,6 @@ where monthly_income = -- = only works if the subwuuery returns a single value
 update employees 
 set monthly_income = 10000
 where id = 14;
-
-
 
 -- subqueryception
 select *
