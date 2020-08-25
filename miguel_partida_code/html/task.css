@@ -1,0 +1,30 @@
+h1{
+    font-size: 100;
+}
+
+body{
+    background-color: indigo;
+
+}
+
+p{
+    color: green;
+}
+
+#wow{
+    background-color: rgb(50, 194, 187);
+
+}
+ul {
+    color: red;
+}
+
+table, th, td{
+    size: 25px;
+    border: 1px solid black;
+}
+
+#h1blog{
+    font-size: 100px;
+    color: sandybrown;
+}
