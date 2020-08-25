@@ -24,4 +24,16 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
+
+    public int sum(int a,int b){
+        return a+b;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
