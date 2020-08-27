@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>ServletSessionExample</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <!--
+  		The web.xml file is your DEPLOYMENT DESCRIPTOR
+   -->
+  
+  
+  <!-- SESSION SERVLET -->
+  <servlet>
+  	<servlet-name>SessionServletObj</servlet-name>
+  	<servlet-class>com.example.sessionservlet.SessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SessionServletObj</servlet-name>
+  	<url-pattern>/sesserv</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!-- HELPER SESSION SERVLET -->
+  <servlet>
+  	<servlet-name>HelperSessionServletObj</servlet-name>
+  	<servlet-class>com.example.sessionservlet.HelperSessionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>HelperSessionServletObj</servlet-name>
+  	<url-pattern>/helpsesserv</url-pattern>
+  </servlet-mapping>
+</web-app>
