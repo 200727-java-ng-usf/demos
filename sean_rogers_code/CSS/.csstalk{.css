@@ -1,0 +1,16 @@
+.csstalk{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#id{
+    color: #a4e734;
+}
+.pseudo:hover {
+    font-family: cursive;
+    background-color: #a4e734;
+}
+div{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#pel::first-letter{
+    font-size: x-large;
+}
