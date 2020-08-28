@@ -23,4 +23,13 @@
         <url-pattern>/MasterServlet</url-pattern>
         <url-pattern>/trevin</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>JSONMasterServlet</servlet-name>
+        <servlet-class>com.example.jsonServlets.JSONMasterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JSONMasterServlet</servlet-name>
+        <url-pattern>/json/*</url-pattern>
+    </servlet-mapping>
 </web-app>
