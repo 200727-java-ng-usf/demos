@@ -10,6 +10,7 @@
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
 
+    <!-- FORWARDING MASTER SERVLET -->
     <servlet>
         <servlet-name>ForwardingMasterServlet</servlet-name>
         <servlet-class>example.servlet.ForwardingMasterServlet</servlet-class>
@@ -23,6 +24,18 @@
         <url-pattern>/api/*</url-pattern>
         <!-- YES...you can have multiple url-pattern tags -->
          <url-pattern>/farren</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- DIRECT RESPONSE SERVLET -->
+    <servlet>
+        <servlet-name>JsonMasterServlet</servlet-name>
+        <servlet-class>example.jsonservlet.JsonMasterServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>JsonMasterServlet</servlet-name>
+        <url-pattern>/json/*</url-pattern>
     </servlet-mapping>
 
 </web-app>
