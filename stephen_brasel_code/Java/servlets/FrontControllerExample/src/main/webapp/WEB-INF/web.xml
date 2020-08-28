@@ -10,11 +10,17 @@
     </welcome-file-list>
 
     <servlet>
-        <servlet-name>MasterServlet</servlet-name>
-        <servlet-class>com.example.servlet.MasterServlet</servlet-class>
+        <servlet-name>ForwardingMasterServlet</servlet-name>
+        <servlet-class>com.example.servlets.ForwardingMasterServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>MasterServlet</servlet-name>
+        <servlet-name>ForwardingMasterServlet</servlet-name>
+        <!--* is a Wildcard Character-->
+        <url-pattern>*.pokemans</url-pattern>
+        <url-pattern>/api/*</url-pattern>
+
+        <!--Yes, you can have multiple URL patterns-->
         <url-pattern>/MasterServlet</url-pattern>
+        <url-pattern>/trevin</url-pattern>
     </servlet-mapping>
 </web-app>

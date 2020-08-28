@@ -21,7 +21,7 @@ public class SuperVillain {
 
 	public void setName(String name) {
 		this.name = name;
-	}
+}
 
 	public String getSuperpower() {
 		return superpower;
