@@ -5,13 +5,31 @@
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
   
-  
+  <!-- FORWARDING MASTER SERVLET -->
   <servlet>
-    <servlet-name>MasterServlet</servlet-name>
-    <servlet-class>com.example.servlet.MasterServlet</servlet-class>
+    <servlet-name>ForwardingMasterServlet</servlet-name>
+    <servlet-class>com.example.servlet.ForwardingMasterServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>MasterServlet</servlet-name>
+    <servlet-name>ForwardingMasterServlet</servlet-name>
+    <!-- "*" is a wildcard -->
+    <url-pattern>*.pokemans</url-pattern>
+    <url-pattern>/api/*</url-pattern>
+    
+    <!-- YES...you can have multiple url-pattern tags -->
     <url-pattern>/MasterServlet</url-pattern>
+    <url-pattern>/trevin</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <!-- DIRECT RESPONDING MASTER SERVLET -->
+  <servlet>
+    <servlet-name>JsonMasterServlet</servlet-name>
+    <servlet-class>com.example.jsonservlet.JsonMasterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JsonMasterServlet</servlet-name>
+    <url-pattern>/json/*</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -6,14 +6,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class MasterServlet extends HttpServlet {
+public class ForwardingMasterServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().write("in get");
+		//request.getRequestDispatcher("String").forward(request, response);
+		request.getRequestDispatcher(RequestHelper.process(request)).forward(request, response);
+		
+		
+		//response.getWriter().write("in get");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().write("in post");
+		request.getRequestDispatcher(RequestHelper.process(request)).forward(request, response);
+		
+		//response.getWriter().write("in post");
 	}
 
 }
