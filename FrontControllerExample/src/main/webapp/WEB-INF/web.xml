@@ -1,0 +1,28 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <display-name>Hello, Servlets!</display-name>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>ForwardingMasterServlet</servlet-name>
+        <servlet-class>example.servlet.ForwardingMasterServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ForwardingMasterServlet</servlet-name>
+        <url-pattern>/MasterServlet</url-pattern>
+        <!-- "*" is a wildcard. Can take an infinite amount of values as valid -->
+        <url-pattern>*.pokemans</url-pattern>
+        <url-pattern>/api/*</url-pattern>
+        <!-- YES...you can have multiple url-pattern tags -->
+         <url-pattern>/farren</url-pattern>
+    </servlet-mapping>
+
+</web-app>
