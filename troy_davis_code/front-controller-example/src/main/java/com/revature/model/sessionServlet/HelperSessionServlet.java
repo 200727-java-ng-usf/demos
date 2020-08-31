@@ -1,7 +1,4 @@
 package com.revature.model.sessionServlet;
-
-import com.revature.model.SuperVillain;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;

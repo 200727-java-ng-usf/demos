@@ -1,0 +1,44 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <display-name>front-controlller-example</display-name>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+
+    <servlet>
+        <servlet-name>ForwardingMasterServlet</servlet-name>
+        <servlet-class>com.revature.model.servlet.ForwardingMasterServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ForwardingMasterServlet</servlet-name>
+        <!-- Yes you can have multiple api patterns -->
+        <url-pattern>/ForwardingMasterServlet</url-pattern>
+
+        <!-- Wildcard character -->
+        <url-pattern>*.pokemans</url-pattern>
+
+        <!-- wildcard api, no file endings needed -->
+        <url-pattern>/api/*</url-pattern>
+
+
+        <url-pattern>/trevin</url-pattern>
+    </servlet-mapping>
+
+    <!-- Direct Response Servlet -->
+    <servlet>
+        <servlet-name>JsonMasterServlet</servlet-name>
+        <servlet-class>com.revature.jsonservlet.JsonMasterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JsonMasterServlet</servlet-name>
+        <!-- wildcard api, no file endings needed -->
+        <url-pattern>/json/*</url-pattern>
+    </servlet-mapping>
+</web-app>

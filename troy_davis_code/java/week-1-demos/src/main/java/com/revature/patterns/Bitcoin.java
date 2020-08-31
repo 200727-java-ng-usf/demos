@@ -1,10 +1,8 @@
 package com.revature.patterns;
 
-public class Dollar implements Currency{
-
-
+public class Bitcoin implements Currency{
     @Override
     public String getSymbol() {
-        return "USD";
+        return "BTC";
     }
 }

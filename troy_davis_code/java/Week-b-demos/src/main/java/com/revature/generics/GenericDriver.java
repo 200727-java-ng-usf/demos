@@ -15,7 +15,7 @@ public class GenericDriver {
         System.out.println(myString);
 
         //throws class cast exception
-        String maybeString = (String) myList.get(1); //
+        //String maybeString = (String) myList.get(1); //
 
                                                     //Dont need to put string at the end
         // ArrayList<String> betterList = new ArrayList<String>();
