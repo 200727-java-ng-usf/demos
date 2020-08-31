@@ -1,7 +1,7 @@
-//for(var i =0; i < 50; i++){
-//	document.write("<br><br>");
-//	document.write("<article class=\"h"+ (i%3+1) + "\">I'm Mr. Meseeks, look at me! I'm Mr. Meseeks, yessiree!</article>");
-//}
+for(var i =0; i < 50; i++){
+	document.write("<br><br>");
+	document.write("<article class=\"h"+ (i%3+1) + "\">I'm Mr. Meseeks, look at me! I'm Mr. Meseeks, yessiree!</article>");
+}
 
 //I don't need no stinkin' semi colon...
 //console.log("look at this console log!!! weeeee!!");
@@ -144,3 +144,14 @@ console.log(1.1+1); //print
 console.log(1.1+1.3); //print 2.4000000000000004
 var precision = 1.1+1.3
 console.log(precision.toFixed(6)); //prints 2.40, toFixed(n) rounds to the n places
+
+// var globalLevel = 9;
+// function myFunc(){
+// 	var functionLevel = 10;
+
+// 	if(functionLevel){
+
+// 	}
+// }
+var elems = document.getElementsByTagName("header");
+console.log(typeof(elems));
