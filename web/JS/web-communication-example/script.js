@@ -47,5 +47,5 @@ function getPokemonAjax() {
     req.send();
 }
 
-//getPokemonFetch();
-getPokemonAjax();
+getPokemonFetch();
+//getPokemonAjax();
