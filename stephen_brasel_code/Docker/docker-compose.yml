@@ -1,0 +1,14 @@
+version: '3'
+services:
+  tomcat:
+    # build: /file-share-server/
+    # ports:
+    #   - 5000:5000
+    #   orm:
+    image: tomcat
+    ports: 
+        - 5001:8080
+  tomcat2: 
+    build: .
+    ports:
+        - 5000:8080
