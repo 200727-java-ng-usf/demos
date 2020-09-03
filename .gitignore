@@ -1,10 +1,17 @@
+<<<<<<< HEAD
 # this is a comment
 
+=======
+>>>>>>> master
 # IDE-specific files and folders
 .idea/
 *.iml
 
+<<<<<<< HEAD
 #Build folders and files
+=======
+# Build folders and files
+>>>>>>> master
 target/
 out/
 *.class

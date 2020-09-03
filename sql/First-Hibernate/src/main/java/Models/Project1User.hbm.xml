@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Models">
+
+    <class name="Project1User" table="ers_users">
+        <id name="id" column="ers_user_id"/>
+
+        <property name="username" column="username" />
+        <property name="firstName" column="first_name"/>
+        <property name="lastName" column="last_name" />
+        <property name="email" column="email" />
+        <property name="userRoleId" column="user_role_id"/>
+
+    </class>
+</hibernate-mapping>
