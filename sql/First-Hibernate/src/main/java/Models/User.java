@@ -3,8 +3,16 @@ package Models;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.NamedQueries;
+import org.hibernate.annotations.NamedQuery;
+
 import javax.persistence.Id;
 
+@NamedQueries({
+	@NamedQuery(name="User_getUserByName", query="FROM User WHERE "
+			+ "first_name = :firstName AND last_name = :lastName")
+})
 @Entity
 @Table(name="users")
 public class User {

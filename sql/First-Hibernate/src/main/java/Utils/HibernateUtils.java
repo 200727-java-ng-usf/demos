@@ -24,10 +24,10 @@ public class HibernateUtils {
 				.setProperty("hibernate.connection.url", "jdbc:postgresql://drona.db.elephantsql.com:5432/phtgcdlh")
 				.setProperty("hibernate.connection.username", "phtgcdlh")
 				.setProperty("hibernate.connection.password", "L1cz5O92L6uvf66EEOlbqNaxLf7J1Q2e")
-				/*.setProperty("hibernate.connection.url", "jdbc:postgresql://java-ng-usf-200727.casmekiat9nm.us-east-1.rds.amazonaws.com:5432/postgres?currentSchema=HibernateTest")
-				.setProperty("hibernate.connection.username", "postgres")
-				.setProperty("hibernate.connection.password", "Revature")*/
-				.addAnnotatedClass(User.class);
+				.addAnnotatedClass(User.class)
+				.addAnnotatedClass(Employee.class)
+				.addAnnotatedClass(Location.class)
+				.addAnnotatedClass(Team.class);
 			
 				config.setImplicitNamingStrategy(ImplicitNamingStrategyJpaCompliantImpl.INSTANCE);
 			
