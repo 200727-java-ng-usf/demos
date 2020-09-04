@@ -95,6 +95,9 @@ public class CustomLinkedList<T> {
         }
 
     }
+    public boolean removeByKey(T dataValue) {
+        return false;
+    }
     public void remove(String value) {
         Node checker = head;
         removeRecursive(value,checker, null);

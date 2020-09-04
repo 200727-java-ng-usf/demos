@@ -24,7 +24,7 @@ public class LinkedListDriver {
         //System.out.println(stringList.peek()); // test1
         //System.out.println(stringList.poll()); // test1
         //System.out.println(stringList.poll()); // test2
-        stringList.remove("test1");
+        stringList.remove("test3");
         stringList.printList();
     }
 

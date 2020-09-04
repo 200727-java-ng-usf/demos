@@ -1,0 +1,18 @@
+.header{
+    font-family: fantasy;
+    color: #8B0000;
+    margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 300px;
+}
+body {
+    background-color: goldenrod;
+}
+div{
+    margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+  color: #800000;
+}
