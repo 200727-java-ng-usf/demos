@@ -1,3 +1,5 @@
+package com.revature;
+
 public class DockerDemoClass {
 
     public static void main(String[] args) {
