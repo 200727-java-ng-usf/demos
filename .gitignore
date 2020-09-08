@@ -32,4 +32,5 @@ out/
 
 
 # Configuration files
+application.properties
 hibernate.cfg.xml
