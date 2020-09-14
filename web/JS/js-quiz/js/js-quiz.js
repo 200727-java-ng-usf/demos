@@ -33,7 +33,47 @@ window.onload = () => {
 
 }
 
-function buildQuiz() {
+async function buildQuiz() {
+
+    let getQuestionsFunction = await getQuestions();
+    let myQuestions = await getQuestionsFunction();
+    
+    // Convenience reference for our quiz container
+    let quizContainer = document.getElementById('quiz-container');
+
+    // Create an array which can hold the HTML of our quiz
+    const htmlOutput = [];
+
+    /*
+        Next, we can start building the HTML for each question. We will
+        need to loop through the questions array.
+    */
+   myQuestions.forEach((currentQuestion, questionNumber) => {
+        
+        // create an array for storing the list of answer choices
+        const answers = [];
+
+        // for each available answer, create some HTML that will be rendered on the screen
+        for (let letter in currentQuestion.answers) {
+            answers.push(`
+            <label>
+                <input type="radio" name="question-${questionNumber}" value="${letter}" />
+                ${letter}: ${currentQuestion.answers[letter]}
+            </label>
+            `);
+        }
+
+        // create the HTML for this question and its answers; add them to the htmlOutput array
+        htmlOutput.push(`
+        <br/>
+        <div class="question">${currentQuestion.question}</div>
+        <div class="answers">${answers.join('')}</div>
+        `);
+
+   });
+
+   // Combine our HTML into one string and put it within the quiz container div
+   quizContainer.innerHTML = htmlOutput.join('');
     
 }
 
@@ -42,5 +82,36 @@ function isQuizValid() {
 }
 
 function showResults() {
+
+}
+
+async function getQuestions() {
+
+    let myQuestions;
+
+    return async function() {
+
+        if (myQuestions) {
+
+            console.log('questions already retrieved, returning existing questions.')
+            return myQuestions;
+
+        } else {
+
+            console.log('first time request for questions, fetching from api.jsonbin.io...');
+
+            let response = await fetch('https://api.jsonbin.io/b/5f5fb889302a837e95663c95', {
+                method: 'GET',
+                headers: {
+                    'secret-key': '$2b$10$5ByNoV2Moynb1rjMK0dbnuOC0vFUq.N34QN0MWRT8VTlCCyRCutE6'
+                }
+            });
+
+            myQuestions = await response.json();
     
+            return myQuestions;
+
+        }
+    }
+
 }
