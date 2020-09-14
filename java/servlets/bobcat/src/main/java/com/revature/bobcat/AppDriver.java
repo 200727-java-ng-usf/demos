@@ -18,7 +18,7 @@ public class AppDriver {
 			System.out.println("Revature Bobcat server started on port 8080");
 			server.createContext("/", new RootHandler());
 
-			server.createContext("/fa=vicon.ico", exchange -> {
+			server.createContext("/favicon.ico", exchange -> {
 				exchange.sendResponseHeaders(404, 0);
 				try(OutputStream outputStream = exchange.getResponseBody()){
 				    outputStream.write(null);
