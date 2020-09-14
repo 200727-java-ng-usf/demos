@@ -29,7 +29,6 @@ public class LoginController {
 		} else{
 			/*
 			for YOUR project, you won't actually hardcore "cheese" and "louise" you'll go to
-
 			 */
 			req.getSession().setAttribute("loggedUsername", username);
 			req.getSession().setAttribute("loggedPassword", password);
