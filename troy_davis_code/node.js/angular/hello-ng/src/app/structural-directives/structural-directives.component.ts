@@ -5,11 +5,42 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './structural-directives.component.html',
   styleUrls: ['./structural-directives.component.css']
 })
-export class StructuralDirectivesComponent implements OnInit {
+export class StructuralDirectivesComponent {
 
-  constructor() { }
+  //ng if demo
+  condition = true;
 
-  ngOnInit(): void {
-  }
+  changeCondition() {
+    this.condition = !this.condition;
+  };
 
+  // --------------------------------------------------- //
+
+    people = [
+      'troy',
+      'kaila',
+      'ronin'
+    ]
+    
+    monsters = [
+      {
+        name: 'Nessie',
+        location: 'Loch ness, scotland'
+      },
+      {
+        name: 'BigFoot',
+        location: 'woods'
+      },
+      {
+        name: 'Gozilla',
+        location: 'SC'
+      }
+    ]
+
+    // -------------------------------------//
+    time: string = '';
+    changeTimeOfDay(desiredTime: string) {
+      this.time = desiredTime;
+    };
+    
 }

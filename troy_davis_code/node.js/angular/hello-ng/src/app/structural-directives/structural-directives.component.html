@@ -1,1 +1,37 @@
-<p>structural-directives works!</p>
+<div *ngIf="condition">Condition Met</div>
+<div *ngIf="!condition">Condition not met</div>
+<button (click)="changeCondition()">Change condition</button>
+
+<h3>People</h3>
+<ul>
+    <li *ngFor="let person of people">{{ person }}</li>
+</ul>
+
+<h3> Monsters</h3>
+<ul>
+    <li *ngFor="let monster of monsters; let i = index">
+        {{i}} - {{ monster.name }}: {{ monster.location}} 
+    <button *ngIf="monster.name == 'Gozilla'">Godzilla</button>
+    </li>
+</ul>
+
+<hr>
+
+
+<h3>Day &amp; Night </h3>
+<div [ngSwitch]="time">
+    <span *ngSwitchCase=" 'night' ">
+        Its night time 
+        <button (click)="changeTimeOfDay('day')">Change to Day!</button>
+    </span>
+    <span *ngSwitchCase=" 'day' ">
+        Its Day time
+        <button (click)="changeTimeOfDay('night')">Change to night</button>
+    </span>
+    <span *ngSwitchDefault>
+        Idk what ime its is, no windows in this room
+        <br/>
+        <button (click)="changeTimeOfDay('day')">Day</button>
+        <button (click)="changeTimeOfDay('night')">Night</button>
+    </span>
+</div>
