@@ -7,5 +7,33 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'hello-ng';
+  
+  showStructural = false;
+  showAttribute = false;
+  showPipes = false;
+
+  show(whatToShow: string) {
+    switch (whatToShow) {
+      case 'structural':
+        this.showAttribute = false;
+        this.showPipes = false;
+        this.showStructural = true;
+        break;
+      case 'attribute':
+        this.showStructural = false;
+        this.showPipes = false;
+        this.showAttribute = true;
+        break;
+      case 'pipes':
+        this.showAttribute = false;
+        this.showStructural = false;
+        this.showPipes = true;
+        break;
+      default:
+        this.showAttribute = false;
+        this.showStructural = false;
+        this.showPipes = false;
+    }
+  }
+
 }

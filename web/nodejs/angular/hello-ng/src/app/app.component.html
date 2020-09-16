@@ -1,7 +1,20 @@
 <h1>Hello NG!</h1>
-<!-- {{ variableName }} == interpolation -->
-<h2>This application is named: {{ title }}</h2>
 
-<app-first></app-first>
+<button (click)="show('structural')">Show Structural Directives</button>
+<button (click)="show('attribute')">Show Attribute Directives</button>
+<button (click)="show('pipes')">Show Pipes</button>
 
-<app-structural-directives></app-structural-directives>
+<div *ngIf="showStructural">
+    <h2>Structural Directives</h2>
+    <app-structural-directives></app-structural-directives>
+</div>
+
+<div *ngIf="showAttribute">
+    <h2>Attribute Directives</h2>
+    <app-attribute-directives></app-attribute-directives>
+</div>
+
+<div *ngIf="showPipes">
+    <h2>Pipes</h2>
+    <app-pipes></app-pipes>
+</div>
