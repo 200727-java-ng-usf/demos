@@ -1,0 +1,30 @@
+<input [(ngModel)]="title" type="text" name="movie-title">
+<br/>
+<p>{{title | titleCase}}</p>
+
+<hr/>
+
+<header class="h2">Pure and Impure Pipes</header>
+
+<header class="h3">Example Objects</header>
+<div>
+	First Name: <input type="text" [(ngModel)]="examplePerson.firstName">
+	Last Name: <input type="text" [(ngModel)]="examplePerson.lastName">
+	<button (click)="updatePerson()">update Person Object!</button>
+</div>
+
+<br>
+<br>
+
+<div>
+	Values using PureJsonPipe (pure):
+	{{ examplePerson | pureJson }}
+	{{ examplePerson.firstName | pureJson }}
+	{{ examplePerson.lastName | pureJson }}
+
+	<br>
+	<br>
+
+	Values using JsonPipe - provided by NG (impure)
+	{{examplePerson | json }}
+</div>

@@ -34,3 +34,6 @@ out/
 # Configuration files
 application.properties
 hibernate.cfg.xml
+
+# Debug files
+debug.log

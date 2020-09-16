@@ -51,7 +51,7 @@ export class StructuralDirectivesComponent {
   // ---------------------------------------
 
   time: string = '';
-
+  // night;
   changeTimeOfDay(desiredTime: string) {
     this.time = desiredTime;
   }

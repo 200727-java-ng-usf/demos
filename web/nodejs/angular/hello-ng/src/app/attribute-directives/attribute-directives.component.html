@@ -1,0 +1,32 @@
+<div>
+	<span>Name:</span>
+	<input type="checkbox" (click)="enabler()">
+	<br/>
+	<select name="color" [(ngModel)]="selectedColor" [disabled]="isDisabled">
+		<option *ngFor="let color of colors">{{ color }}</option>
+	</select>
+
+	<br/>
+	<br/>
+
+	<span>Classes</span>
+	<select multiple name="class" (change)="addClasses($event)">
+		<option *ngFor="let class of classes" [value]="class.className">
+			{{class.displayName}}
+		</option>
+	</select>
+</div>
+
+<br/>
+<br/>
+
+
+
+<div>
+	Name: {{ name }}
+	<br/>
+	<br/>
+	<span [ngClass]="selectedClasses.join(' ')" [ngStyle]="{'color':selectedColor}">
+		color: {{selectedColor}}
+	</span>
+</div>
