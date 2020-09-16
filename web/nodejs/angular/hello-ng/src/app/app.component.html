@@ -1,8 +1,18 @@
-<h1>Hello NG!</h1>
+<app-nav></app-nav>
+<br/>
+<br/>
+<br/>
+<router-outlet></router-outlet>
+
+
+
+<!-- The below code is commented out and kept for posterity -->
+<!-- <h1>Hello NG!</h1>
 
 <button (click)="show('structural')">Show Structural Directives</button>
 <button (click)="show('attribute')">Show Attribute Directives</button>
 <button (click)="show('pipes')">Show Pipes</button>
+<button (click)="show('login')">Show Login</button>
 
 <div *ngIf="showStructural">
     <h2>Structural Directives</h2>
@@ -18,3 +28,8 @@
     <h2>Pipes</h2>
     <app-pipes></app-pipes>
 </div>
+
+<div *ngIf="showLogin">
+    <h2>Login</h2>
+    <app-login></app-login>
+</div> -->
