@@ -1,14 +1,21 @@
-<header class='h1'>Hello, NG!</header>
-<!-- {{ variableName }} == interpolation
+<app-nav></app-nav>
+<br>
+<br>
+<router-outlet></router-outlet>
+
+
+<!-- <header class='h1'>Hello, NG!</header>
+{{ variableName }} == interpolation
 <header class='h2'>This application is named: {{title}}</header>
 
 <app-authors></app-authors>
 <app-first></app-first>
-<app-structural-directives></app-structural-directives> -->
+<app-structural-directives></app-structural-directives>
 
 <button (click)="show('structural')">Show Structural Directives</button>
 <button (click)="show('attribute')">Show Attribute Directives</button>
 <button (click)="show('pipes')">Show Pipes</button>
+<button (click)="show('login')">Show Login</button>
 
 <div *ngIf='showStructural'>
 	<header class="h2">Structural Directives</header>
@@ -24,3 +31,8 @@
 	<header class="h2">Pipes</header>
 	<app-pipes></app-pipes>
 </div>
+
+<div *ngIf='showLogin'>
+	<header class="h2">Login</header>
+	<app-login></app-login>
+</div> -->
