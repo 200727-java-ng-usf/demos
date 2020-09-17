@@ -25,6 +25,10 @@ export class NavComponent {
       fragment: '/pipes'
     }, 
     {
+      linkName: 'Quiz (HttpClient Demo)',
+      fragment: '/quiz'
+    },
+    {
       linkName: 'First',
       fragment: '/'
     }

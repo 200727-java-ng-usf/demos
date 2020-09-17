@@ -13,6 +13,9 @@ import { PureJsonPipe } from './util/pure-json.pipe';
 import { LoginComponent } from './login/login.component';
 import { NavComponent } from './nav/nav.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { QuizComponent } from './quiz/quiz.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,14 +27,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PipesComponent,
     PureJsonPipe,
     LoginComponent,
-    NavComponent
+    NavComponent,
+    NotFoundComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
