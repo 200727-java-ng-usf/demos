@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AttributeDirectivesComponent } from './attribute-directives/attribute-directives.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { FirstComponent } from './first/first.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'attribute', component: AttributeDirectivesComponent },
   { path: 'pipes', component: PipesComponent },
   { path: 'quiz', component: QuizComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: '**', component: NotFoundComponent } // wildcard routes should ALWAYS go last
 ];
 

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  someProp: 'someValue'
+  API_URL: 'http://localhost:8080/revabooks'
 };
 
 /*

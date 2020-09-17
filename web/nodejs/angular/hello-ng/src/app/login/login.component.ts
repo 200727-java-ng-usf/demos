@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   loading = false;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
     console.log('LoginComponent instantiating...');
     console.log('LoginComponent instantiation complete.');
   }
@@ -43,7 +44,25 @@ export class LoginComponent implements OnInit {
 
     this.loading = true;
 
-    this.authService.authenticate(this.formFields.username.value, this.formFields.password.value);
+    this.authService.authenticate(this.formFields.username.value, this.formFields.password.value)
+                    .subscribe(
+                      // user successfully logged in, execute the function below
+                      () => {
+                        this.loading = false;
+                        console.log('login successful!');
+                        console.log('Navigating to dashboard...');
+                        this.router.navigate(['/dashboard']);
+                      },
+                      // if an error occurs, execute the function below
+                      err => {
+                        console.log(err);
+                        this.loading = false;
+                        this.submitted = false;
+                      },
+                      () => {
+                        console.log('observable complete!')
+                      }
+                    );
 
   }
 

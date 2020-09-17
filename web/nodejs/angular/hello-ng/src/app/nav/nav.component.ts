@@ -29,6 +29,10 @@ export class NavComponent {
       fragment: '/quiz'
     },
     {
+      linkName: 'Dashboard',
+      fragment: '/dashboard'
+    },
+    {
       linkName: 'First',
       fragment: '/'
     }
