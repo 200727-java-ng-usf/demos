@@ -1,0 +1,13 @@
+.error-template {
+    padding: 2.5rem 1rem;
+    text-align: center;
+}
+
+.error-actions {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.error-actions .btn {
+    margin-right: .75rem;
+}
