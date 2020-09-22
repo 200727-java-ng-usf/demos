@@ -11,6 +11,7 @@ export class AppComponent {
   showAttribute = false;
   showPipes = false;
   showLogin = true;
+  title = "hello-ng";
 
   show(whatToShow: string) {
     switch (whatToShow) {

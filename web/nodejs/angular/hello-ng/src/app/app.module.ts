@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
+  // Configure the selectors
   declarations: [
     AppComponent,
     AuthorsComponent,
@@ -35,6 +36,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     QuizComponent,
     DashboardComponent
   ],
+  // Generate the host factory
+  entryComponents: [], 
+  // composing NgModules together
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -43,7 +47,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NgbModule,
     HttpClientModule
   ],
+  exports: [], // making NgModules available to other parts of the app
+  // Runtime, or injector configuration
+  // Runtime injector configuration
   providers: [],
+  // Bootstrap
   bootstrap: [AppComponent]
 })
 export class AppModule { }

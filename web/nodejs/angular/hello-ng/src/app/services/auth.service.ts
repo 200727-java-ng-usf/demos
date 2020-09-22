@@ -47,4 +47,8 @@ export class AuthService {
     this.http.get(`${env.API_URL}/auth`); //invalidates the server http session
     this.currentUserSubject.next(null); // makes the UI aware that the user has signed out.
   }
+
+  isAuthenticated(): boolean{
+    return !!this.currentUserValue;
+  }
 }
