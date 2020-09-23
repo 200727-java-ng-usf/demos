@@ -1,13 +1,16 @@
 package com.revature.models;
 
 import com.revature.services.MotivationService;
+import com.revature.services.SportMotivationService;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BaseballCoach implements Coach {
 
 	private MotivationService motivationService;
 
 	//Constructor-based injection (Spring recommends this fro MANDATORY dependencies)
-	public BaseballCoach(MotivationService motivationService){
+	public BaseballCoach(SportMotivationService motivationService){
 		System.out.println("Baseball Coach no-args constructor invoked!");
 		this.motivationService = motivationService;
 	}

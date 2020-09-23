@@ -1,10 +1,21 @@
 package com.revature.models;
 
 import com.revature.services.MotivationService;
+import com.revature.services.SportMotivationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+@Component
 public class FootballCoach implements Coach {
 
+	@Value("${coach.email}")
 	private String email;
+
+	@Value("The Cafebabes")
 	private String teamName;
 	private MotivationService motivationService;
 
@@ -28,20 +39,24 @@ public class FootballCoach implements Coach {
 		this.teamName = teamName;
 	}
 
+	@Override
 	public MotivationService getMotivationService() {
 		return motivationService;
 	}
 
 	//Setter-based injection (Spring recommends this fro Optional dependencies)
-	public void setMotivationService(MotivationService motivationService) {
+	@Autowired
+	public void setMotivationService(MotivationService sportMotivationService) {
 		System.out.println("FootballCoach.setMotivationService invoked!");
-		this.motivationService = motivationService;
+		this.motivationService = sportMotivationService;
 	}
 
+	@PostConstruct
 	private void customInit(){
 		System.out.println("FootballCoach.customInit() invoked.");
 	}
 
+	@PreDestroy
 	private void customDestroy(){
 		System.out.println("FootballCoach.customDestroy() invoked.");
 	}
