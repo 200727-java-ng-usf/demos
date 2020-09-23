@@ -1,19 +1,16 @@
 package com.revature.models;
 
 import com.revature.services.MotivationService;
+import com.revature.services.SportMotivationService;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BaseballCoach implements Coach {
 
-    // Gross. Tight coupling.
-//    private MotivationService motivationService = new MotivationService();
-
     private MotivationService motivationService;
 
-    // Constructor-based dependency injection (Spring recommends this for MANDATORY dependencies)
-    public BaseballCoach(MotivationService motivationService) {
-        System.out.println("BaseballCoach no-args constructor invoked!");
+    public BaseballCoach(SportMotivationService motivationService) {
+        System.out.println("BaseballCoach constructor invoked!");
         this.motivationService = motivationService;
     }
 
