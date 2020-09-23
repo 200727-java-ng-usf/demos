@@ -12,7 +12,7 @@ public class Driver {
 		AnnotationConfigApplicationContext container = new AnnotationConfigApplicationContext(AppConfig.class);
 		container.registerShutdownHook();
 		System.out.println("Bean container created!");
-		
+
 		System.out.println("Retrieving SpringBean instance from container");
 		container.getBean("springBean", SpringBean.class);
 		System.out.println("SpringBean instance retrieved from container");
