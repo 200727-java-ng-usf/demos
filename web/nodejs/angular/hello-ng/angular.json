@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "hello-ng"
+    }
+  },
+  "defaultProject": "hello-ng",
+  "cli": {
+    "analytics": "5cc415a5-1d0b-4a9c-8d3f-ae87e473b1b5"
+  }
 }
