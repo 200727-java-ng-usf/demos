@@ -1,8 +1,8 @@
 package com.revature;
 
-import com.revature.config.AppConfig;
 import com.revature.models.Coach;
 import com.revature.models.FootballCoach;
+import com.revature.models.MySpringBean;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -11,7 +11,7 @@ public class SpringDriver {
 	public static void main(String[] args) {
 		System.out.println("Creating bean container");
 
-		try (AnnotationConfigApplicationContext container = new AnnotationConfigApplicationContext(AppConfig.class)){
+		try (ClassPathXmlApplicationContext container = new ClassPathXmlApplicationContext("beans.xml")){
 
 			System.out.println("Bean container created!");
 
@@ -32,12 +32,17 @@ public class SpringDriver {
 
 			// -------------------------------------------------
 
-			FootballCoach footballCoach = container.getBean("myFootballCoach", FootballCoach.class);
+			FootballCoach footballCoach = container.getBean("footballCoach", FootballCoach.class);
 			System.out.println(footballCoach.getDailyWorkout());
 			System.out.println(footballCoach.getMotivation());
 			System.out.println(footballCoach.getTeamName());
 			System.out.println(footballCoach.getEmail());
+			System.out.println(footballCoach.getSomeCalculatedValue());
+			System.out.println(footballCoach.getEmailAndTeamName());
 
+			MySpringBean springyBeanie = new MySpringBean();
+
+			System.out.println(springyBeanie.getMessage());
 
 		} catch(Exception e) {
 		    e.printStackTrace();

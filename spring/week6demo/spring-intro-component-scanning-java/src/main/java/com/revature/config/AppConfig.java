@@ -1,6 +1,5 @@
 package com.revature.config;
 
-import com.revature.models.BaseballCoach;
 import com.revature.models.Coach;
 import com.revature.models.FootballCoach;
 import com.revature.models.TrackCoach;
@@ -33,3 +32,4 @@ public class AppConfig {
 		return coach;
 	}
 }
+
