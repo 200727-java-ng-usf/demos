@@ -19,7 +19,7 @@
     <bean id="myMotivationService" class="com.revature.services.MotivationService" scope="singleton"/>
 
     <!--  Provide the bean definition for our Football Coach implementation -->
-    <bean id="myFootballCoach" class="com.revature.models.FootballCoach">
+    <bean id="myFootballCoach" class="com.revature.models.FootballCoach" init-method="customInit" destroy-method="customDestroy">
         <!-- setter-based dependency injection-->
         <property name="motivationService" ref="myMotivationService"/>
 

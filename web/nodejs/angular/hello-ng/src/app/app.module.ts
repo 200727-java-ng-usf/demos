@@ -51,7 +51,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   // Runtime, or injector configuration
   // Runtime injector configuration
   providers: [],
-  // Bootstrap
+  // Bootstrap 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
