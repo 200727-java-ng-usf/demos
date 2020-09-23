@@ -1,7 +1,9 @@
-package models;
+package com.revature.models;
 
-import services.MotivationService;
+import org.springframework.stereotype.Component;
+import com.revature.services.*;
 
+@Component
 public class TrackCoach implements Coach {
 
     private MotivationService motivationService;

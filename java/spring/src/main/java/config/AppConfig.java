@@ -12,7 +12,7 @@ import services.MotivationService;
 @ComponentScan
 public class AppConfig {
 
-    @Value("${coach.email")
+    @Value("${coach.email}")
     private String coachEmail;
 
     @Bean
