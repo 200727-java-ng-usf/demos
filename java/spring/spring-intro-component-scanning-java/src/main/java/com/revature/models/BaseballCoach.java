@@ -1,7 +1,9 @@
-package revature.models;
+package com.revature.models;
 
 import com.revature.services.MotivationService;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BaseballCoach implements Coach {
 
     // Gross. Tight coupling.

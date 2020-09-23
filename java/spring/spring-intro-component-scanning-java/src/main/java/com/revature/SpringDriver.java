@@ -1,4 +1,4 @@
-package revature;
+package com.revature;
 
 import com.revature.config.AppConfig;
 import com.revature.models.Coach;
@@ -31,7 +31,7 @@ public class SpringDriver {
 
             // ---------------------------------------------
 
-            FootballCoach footballCoach = container.getBean("myFootballCoach", FootballCoach.class);
+            FootballCoach footballCoach = container.getBean("footballCoach", FootballCoach.class);
             System.out.println(footballCoach.getDailyWorkout());
             System.out.println(footballCoach.getMotivation());
             System.out.println(footballCoach.getTeamName());

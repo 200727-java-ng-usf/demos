@@ -1,4 +1,4 @@
-package revature.models;
+package com.revature.models;
 
 import com.revature.services.MotivationService;
 

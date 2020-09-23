@@ -1,8 +1,10 @@
 package com.revature.models;
 
 import com.revature.services.MotivationService;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+@Scope("prototype")
 @Component("myCoach")
 public class TrackCoach implements Coach {
 

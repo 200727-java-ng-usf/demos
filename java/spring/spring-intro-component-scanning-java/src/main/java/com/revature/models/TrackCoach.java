@@ -1,11 +1,16 @@
-package revature.models;
+package com.revature.models;
 
 import com.revature.services.MotivationService;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
+@Scope("prototype")
+@Component("myCoach")
 public class TrackCoach implements Coach {
 
     private MotivationService motivationService;
 
+    // @Autowired is not required (but ok to include) for constructor injection
     public TrackCoach(MotivationService motivationService) {
         System.out.println("TrackCoach no-args constructor invoked!");
         this.motivationService = motivationService;

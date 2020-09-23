@@ -35,6 +35,8 @@ public class SpringDriver {
             System.out.println(footballCoach.getMotivation());
             System.out.println(footballCoach.getTeamName());
             System.out.println(footballCoach.getEmail());
+            System.out.println(footballCoach.getSomeCalculatedValue());
+            System.out.println(footballCoach.getEmailAndTeamName());
 
         } catch (Exception e) {
             e.printStackTrace();
