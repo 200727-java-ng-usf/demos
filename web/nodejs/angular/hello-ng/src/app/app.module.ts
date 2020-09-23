@@ -28,7 +28,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     PipesComponent,
     PureJsonPipe,
     LoginComponent,
-    NavComponent,
     NotFoundComponent,
     QuizComponent,
     DashboardComponent
