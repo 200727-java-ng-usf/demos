@@ -7,16 +7,17 @@ import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { QuizComponent } from './quiz/quiz.component';
+import { AuthGuardService } from './services/auth-guard.service';
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
 
 const routes: Routes = [
   { path: '', component: FirstComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'structural', component: StructuralDirectivesComponent },
-  { path: 'attribute', component: AttributeDirectivesComponent },
-  { path: 'pipes', component: PipesComponent },
-  { path: 'quiz', component: QuizComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'structural', component: StructuralDirectivesComponent, canActivate: [AuthGuardService]  },
+  { path: 'attribute', component: AttributeDirectivesComponent, canActivate: [AuthGuardService]  },
+  { path: 'pipes', component: PipesComponent, canActivate: [AuthGuardService]  },
+  { path: 'quiz', component: QuizComponent, canActivate: [AuthGuardService] },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuardService] },
   { path: '**', component: NotFoundComponent } // wildcard routes should ALWAYS go last
 ];
 

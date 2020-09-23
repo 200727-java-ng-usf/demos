@@ -1,17 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { Principal } from '../models/principal';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent {
+export class NavComponent implements OnDestroy {
 
-  navLinks = [
-    {
-      linkName: 'Login',
-      fragment: '/login'
-    }, 
+  currentUser: Principal;
+  currentUserSub: Subscription;
+
+  constructor(private authService: AuthService, private router: Router) {
+    this.currentUserSub = this.authService.currentUser$.subscribe(user => {
+      this.currentUser = user;
+    });
+  }
+
+  authenticatedUserLinks = [
     {
       linkName: 'Structural Directives Demo',
       fragment: '/structural'
@@ -31,11 +40,28 @@ export class NavComponent {
     {
       linkName: 'Dashboard',
       fragment: '/dashboard'
-    },
+    }
+  ]
+
+  unauthenticatedUserLinks = [
     {
-      linkName: 'First',
-      fragment: '/'
+      linkName: 'Login',
+      fragment: '/login'
     }
   ];
 
+<<<<<<< HEAD
 }
+=======
+  ngOnDestroy() {
+    // remember to unsubscribe from observables to prevent memory leaks
+    this.currentUserSub.unsubscribe(); 
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
+
+}
+>>>>>>> de839b3a6f22c764ba298c9cdb0796ac289e1b57
