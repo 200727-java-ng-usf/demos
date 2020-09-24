@@ -110,7 +110,7 @@ public class SpringBean implements BeanNameAware, BeanClassLoaderAware, BeanFact
 		System.out.println("SpringBean - SpringBean.customDestroy invoked");
 	}
 
-	@Override
+	@Override // comes from disposable bean
 	public void destroy() throws Exception {
 		System.out.println("SpringBean - DisposableBean.destroy invoked");
 	}
