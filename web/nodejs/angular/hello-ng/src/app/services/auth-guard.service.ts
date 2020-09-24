@@ -6,11 +6,19 @@ import { AuthService } from './auth.service';
 @Injectable({
   providedIn: 'root'
 })
+<<<<<<< HEAD
 export class AuthGuardService implements CanActivate{
 
   constructor(private authService: AuthService, private router: Router) {
 
    }
+=======
+export class AuthGuardService implements CanActivate {
+
+  constructor(private authService: AuthService, private router: Router) {
+
+  }
+>>>>>>> e8242646d3e125196ce02b14c450f60a06b29675
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
     
@@ -21,5 +29,9 @@ export class AuthGuardService implements CanActivate{
     } else {
       return true;
     }
+<<<<<<< HEAD
+=======
+    
+>>>>>>> e8242646d3e125196ce02b14c450f60a06b29675
   }
 }

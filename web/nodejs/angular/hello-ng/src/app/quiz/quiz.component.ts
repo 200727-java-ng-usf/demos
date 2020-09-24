@@ -8,7 +8,11 @@ import { QuizService } from '../services/quiz.service';
 })
 export class QuizComponent implements OnInit {
 
+<<<<<<< HEAD
   constructor(private quizService: QuizService){ }
+=======
+  constructor(private quizService: QuizService) { }
+>>>>>>> e8242646d3e125196ce02b14c450f60a06b29675
 
   questions = [];
 
@@ -18,6 +22,7 @@ export class QuizComponent implements OnInit {
     for (let question of quizQuestions) {
       this.questions.push(question);
     }
+<<<<<<< HEAD
 
   }
 
@@ -26,6 +31,12 @@ export class QuizComponent implements OnInit {
   }
 
   loadQuestions() {
+=======
+  }
+
+  toArray(answers: object) {
+    return Object.keys(answers).map(key => answers[key])
+>>>>>>> e8242646d3e125196ce02b14c450f60a06b29675
   }
 
 }

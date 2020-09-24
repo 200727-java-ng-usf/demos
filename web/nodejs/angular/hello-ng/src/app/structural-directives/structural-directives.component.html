@@ -1,6 +1,7 @@
 <div *ngIf="condition">Condition met</div>
 <div *ngIf="!condition">Condition not met</div>
 <button (click)="changeCondition()">Change Condition</button>
+<<<<<<< HEAD
 
 <div *ngIf="anotherCondition">Another Condition met</div>
 <div *ngIf="!anotherCondition">Another Condition not met</div>
@@ -11,10 +12,20 @@
 <header class="h3">People</header>
 <ul>
 	<li *ngFor="let person of people">{{ person }}</li>
+=======
+<div *ngIf="anotherCondition">Other condition met!</div>
+
+<hr/>
+
+<h3>People</h3>
+<ul>
+    <li *ngFor="let person of people">{{ person }}</li>
+>>>>>>> e8242646d3e125196ce02b14c450f60a06b29675
 </ul>
 
 <hr/>
 
+<<<<<<< HEAD
 <header class="h3">Monsters</header>
 <table id="monsterTable" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
 	<thead>
@@ -61,4 +72,33 @@
 		<br/>
 		<button (click)="changeTimeOfDay('night')">Change to Night!</button>
 	</span>
+=======
+<h3>Monsters</h3>
+<ul>
+    <li *ngFor="let monster of monsters; let i = index">
+        {{ i }} - {{ monster.name }}: {{ monster.location }}
+        <button *ngIf="monster.name == 'Godzilla'">GODZILLA!</button>
+    </li>
+</ul>
+
+<hr/>
+
+<h3>Day &amp; Night</h3>
+<div [ngSwitch]="time">
+    <span *ngSwitchCase="'night'">
+        It's night time!
+        <button (click)="changeTimeOfDay('day')">Change to Day!</button>
+    </span>
+    <span *ngSwitchCase="'day'">
+        It's day time!
+        <button (click)="changeTimeOfDay('night')">Change to Night!</button>
+    </span>
+    <span *ngSwitchDefault>
+        I don't know what time it is. There aren't any windows in this room.
+        <br/>
+        <button (click)="changeTimeOfDay('day')">Change to Day</button>
+        <br/>
+        <button (click)="changeTimeOfDay('night')">Change to Night!</button>
+    </span>
+>>>>>>> e8242646d3e125196ce02b14c450f60a06b29675
 </div>

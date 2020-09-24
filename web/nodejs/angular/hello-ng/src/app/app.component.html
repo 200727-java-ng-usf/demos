@@ -1,4 +1,5 @@
 <app-nav></app-nav>
+<<<<<<< HEAD
 <br>
 <br>
 <router-outlet></router-outlet>
@@ -11,12 +12,24 @@
 <app-authors></app-authors>
 <app-first></app-first>
 <app-structural-directives></app-structural-directives>
+=======
+<br/>
+<br/>
+<br/>
+<router-outlet></router-outlet>
+
+
+
+<!-- The below code is commented out and kept for posterity -->
+<!-- <h1>Hello NG!</h1>
+>>>>>>> e8242646d3e125196ce02b14c450f60a06b29675
 
 <button (click)="show('structural')">Show Structural Directives</button>
 <button (click)="show('attribute')">Show Attribute Directives</button>
 <button (click)="show('pipes')">Show Pipes</button>
 <button (click)="show('login')">Show Login</button>
 
+<<<<<<< HEAD
 <div *ngIf='showStructural'>
 	<header class="h2">Structural Directives</header>
 	<app-structural-directives></app-structural-directives>
@@ -35,4 +48,24 @@
 <div *ngIf='showLogin'>
 	<header class="h2">Login</header>
 	<app-login></app-login>
+=======
+<div *ngIf="showStructural">
+    <h2>Structural Directives</h2>
+    <app-structural-directives></app-structural-directives>
+</div>
+
+<div *ngIf="showAttribute">
+    <h2>Attribute Directives</h2>
+    <app-attribute-directives></app-attribute-directives>
+</div>
+
+<div *ngIf="showPipes">
+    <h2>Pipes</h2>
+    <app-pipes></app-pipes>
+</div>
+
+<div *ngIf="showLogin">
+    <h2>Login</h2>
+    <app-login></app-login>
+>>>>>>> e8242646d3e125196ce02b14c450f60a06b29675
 </div> -->

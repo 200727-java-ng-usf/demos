@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .error-template{
 	padding: 2.5rem 1rem;
 	text-align: center;
@@ -10,4 +11,18 @@
 
 .error-actions .btn {
 	margin-right: .75rem;
+=======
+.error-template {
+    padding: 2.5rem 1rem;
+    text-align: center;
+}
+
+.error-actions {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.error-actions .btn {
+    margin-right: .75rem;
+>>>>>>> e8242646d3e125196ce02b14c450f60a06b29675
 }

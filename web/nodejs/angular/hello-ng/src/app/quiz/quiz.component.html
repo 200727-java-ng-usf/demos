@@ -1,4 +1,5 @@
 <div>
+<<<<<<< HEAD
 	<div *ngFor="let currentQuestion of questions; index as i">
 		<br>
 		<div class="question">{{ currentQuestion.question }}</div>
@@ -9,4 +10,16 @@
 			</label>
 		</div>
 	</div>
+=======
+    <div *ngFor="let currentQuestion of questions; index as i">
+        <br/>
+        <div class="question">{{ currentQuestion.question }}</div>
+        <div *ngFor="let letter of toArray(currentQuestion.answers)">
+            <label>
+                <input type="radio" name="question-{{ i }}" [value]="letter" />
+                {{ letter }}: {{ currentQuestion.answers[letter] }}
+            </label>
+        </div>
+    </div>
+>>>>>>> e8242646d3e125196ce02b14c450f60a06b29675
 </div>
