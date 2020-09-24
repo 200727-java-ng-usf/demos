@@ -9,17 +9,30 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
-import org.springframework.orm.hibernate5.SpringSessionContext;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.WebApplicationInitializer;
+import org.springframework.web.context.ContextLoaderListener;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
 
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRegistration;
 import java.util.Properties;
 
+@EnableWebMvc
 @Configuration
 @ComponentScan
 @EnableTransactionManagement
 @PropertySource("classpath:app.properties")
-public class AppConfig {
+public class AppConfig implements WebMvcConfigurer, WebApplicationInitializer {
 
     @Value("${db.driver}")
     private String dbDriver;
@@ -63,6 +76,15 @@ public class AppConfig {
         return txManager;
     }
 
+    @Bean
+    public ViewResolver internalResourceViewResolver() {
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setViewClass(JstlView.class);
+        viewResolver.setPrefix("/WEB-INF/views/");
+        viewResolver.setSuffix(".jsp");
+        return viewResolver;
+    }
+
     private Properties hibernateProperties() {
         Properties hibernateProps = new Properties();
         hibernateProps.setProperty(Environment.DIALECT, "org.hibernate.dialect.PostgreSQL95Dialect");
@@ -73,4 +95,22 @@ public class AppConfig {
         return hibernateProps;
     }
 
+    @Override
+    public void onStartup(ServletContext servletContext) throws ServletException {
+
+        AnnotationConfigWebApplicationContext container = new AnnotationConfigWebApplicationContext();
+        container.register(AppConfig.class);
+
+        servletContext.addListener(new ContextLoaderListener(container));
+        ServletRegistration.Dynamic dispatcher = servletContext.addServlet("DispatcherServlet", new DispatcherServlet(container));
+        dispatcher.setLoadOnStartup(1);
+        dispatcher.addMapping("/");
+
+    }
+
+    @Override
+    public void addViewControllers(final ViewControllerRegistry registry) {
+        registry.addViewController("/")
+                .setViewName("home");
+    }
 }
