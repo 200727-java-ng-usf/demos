@@ -23,4 +23,9 @@ public class UserService {
         return userRepo.findAll();
     }
 
+    @Transactional(readOnly=true)
+    public AppUser findUserById(int id) {
+        return null;
+    }
+
 }
