@@ -3,10 +3,7 @@ package com.revature.quizzard;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.cfg.Environment;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -30,6 +27,7 @@ import java.util.Properties;
 @EnableWebMvc
 @Configuration
 @ComponentScan
+@EnableAspectJAutoProxy(proxyTargetClass=true)
 @EnableTransactionManagement
 @PropertySource("classpath:app.properties")
 public class AppConfig implements WebMvcConfigurer, WebApplicationInitializer {
@@ -110,7 +108,7 @@ public class AppConfig implements WebMvcConfigurer, WebApplicationInitializer {
 
     @Override
     public void addViewControllers(final ViewControllerRegistry registry) {
-        registry.addViewController("/")
-                .setViewName("home");
+        registry.addViewController("/").setViewName("index");
+        registry.addViewController("/home").setViewName("home");
     }
 }

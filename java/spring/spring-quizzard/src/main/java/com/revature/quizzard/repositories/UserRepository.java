@@ -29,14 +29,14 @@ public class UserRepository implements CrudRepository<AppUser> {
 
     public Optional<AppUser> findUserByUsername(String username) {
         Session session = sessionFactory.getCurrentSession();
-        return Optional.of(session.createQuery("from AppUser au where au.username = :un", AppUser.class)
+        return Optional.ofNullable(session.createQuery("from AppUser au where au.username = :un", AppUser.class)
                 .setParameter("un", username)
                 .getSingleResult());
     }
 
     public Optional<AppUser> findUserByEmail(String email) {
         Session session = sessionFactory.getCurrentSession();
-        return Optional.of(session.createQuery("from AppUser au where au.email = :email", AppUser.class)
+        return Optional.ofNullable(session.createQuery("from AppUser au where au.email = :email", AppUser.class)
                 .setParameter("email", email)
                 .getSingleResult());
     }
@@ -50,7 +50,7 @@ public class UserRepository implements CrudRepository<AppUser> {
     @Override
     public Optional<AppUser> findById(int id) {
         Session session = sessionFactory.getCurrentSession();
-        return Optional.of(session.get(AppUser.class, id));
+        return Optional.ofNullable(session.get(AppUser.class, id));
     }
 
     @Override
