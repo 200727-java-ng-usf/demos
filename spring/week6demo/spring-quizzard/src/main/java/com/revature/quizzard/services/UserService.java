@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.NoResultException;
 import java.util.List;
 
 @Service
@@ -39,6 +40,20 @@ public class UserService {
 
 		try{
 			return userRepo.findById(id)
+					.orElseThrow(ResourceNotFoundException::new);
+		} catch(Exception e) {
+			throw new QuizzardException(e);
+		}
+	}
+
+	@Transactional(readOnly = true)
+	public AppUser findUserByUsername(String username){
+		if(username == null || username.equals("")){
+			throw new InvalidRequestException("Id cannot be less than or equal to zero.");
+		}
+
+		try{
+			return userRepo.findUserByUsername(username)
 					.orElseThrow(ResourceNotFoundException::new);
 		} catch(Exception e) {
 			throw new QuizzardException(e);
@@ -92,10 +107,14 @@ public class UserService {
 			throw new InvalidRequestException("Username cannot be null or empty!");
 		}
 		try{
-			return !userRepo.findUserByUsername(username).isPresent();
-		} catch(Exception e) {
+			userRepo.findUserByUsername(username);
+
+		} catch(NoResultException nre){
+			return true;
+		} catch (Exception e) {
 			throw new QuizzardException(e);
 		}
+		return false;
 	}
 
 	@Transactional(readOnly = true)
@@ -104,10 +123,13 @@ public class UserService {
 			throw new InvalidRequestException("Email cannot be null or empty!");
 		}
 		try{
-			return (!userRepo.findUserByEmail(email).isPresent());
-		} catch(Exception e) {
+			userRepo.findUserByEmail(email);
+		} catch(NoResultException nre){
+			return true;
+		} catch (Exception e) {
 			throw new QuizzardException(e);
 		}
+		return false;
 	}
 
 	public boolean isAppUserValid(AppUser candidate) {
