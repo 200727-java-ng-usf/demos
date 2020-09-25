@@ -10,4 +10,12 @@ public class AuthenticationException extends QuizzardException {
         super(msg);
     }
 
+    public AuthenticationException(String msg, Throwable cause) {
+        super(msg, cause);
+    }
+
+    public AuthenticationException(Throwable cause) {
+        super(cause);
+    }
+
 }

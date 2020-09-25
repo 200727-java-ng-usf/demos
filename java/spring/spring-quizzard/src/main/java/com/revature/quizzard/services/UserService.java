@@ -99,14 +99,12 @@ public class UserService {
         }
 
         try {
-            userRepo.findUserByUsername(username);
+            return !userRepo.findUserByUsername(username).isPresent();
         } catch (NoResultException nre) {
             return true;
         } catch (Exception e) {
             throw new QuizzardException(e);
         }
-
-        return false;
     }
 
     @Transactional(readOnly=true)
@@ -117,14 +115,12 @@ public class UserService {
         }
 
         try {
-            userRepo.findUserByEmail(email);
+            return userRepo.findUserByEmail(email).isPresent();
         } catch (NoResultException nre) {
             return true;
         } catch (Exception e) {
             throw new QuizzardException(e);
         }
-
-        return false;
 
     }
 
