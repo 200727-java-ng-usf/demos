@@ -1,5 +1,6 @@
 package com.revature.quizzard.web.aspects;
 
+import com.revature.quizzard.exceptions.AuthenticationException;
 import com.revature.quizzard.exceptions.ResourceNotFoundException;
 import com.revature.quizzard.exceptions.ResourcePersistenceException;
 import com.revature.quizzard.web.dtos.ErrorResponse;
@@ -24,5 +25,11 @@ public class ErrorResponseAspect {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ErrorResponse handleResourceNotFound(ResourceNotFoundException rnfe) {
         return new ErrorResponse(404, rnfe.getMessage());
+    }
+
+    @ExceptionHandler
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public ErrorResponse handleAuthenticationIssues(AuthenticationException ae) {
+        return new ErrorResponse(401, ae.getMessage());
     }
 }
