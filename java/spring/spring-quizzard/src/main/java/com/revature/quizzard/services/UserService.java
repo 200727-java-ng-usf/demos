@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.NoResultException;
 import java.util.List;
 
 @Service
@@ -42,6 +43,21 @@ public class UserService {
 
         try {
             return userRepo.findById(id).orElseThrow(ResourceNotFoundException::new);
+        } catch (Exception e) {
+            throw new QuizzardException(e);
+        }
+
+    }
+
+    @Transactional
+    public AppUser findUserByUsername (String username) {
+
+        if (username == null || username.equals("")) {
+            throw new InvalidRequestException("The provided username was null or empty!");
+        }
+
+        try {
+            return userRepo.findUserByUsername(username).orElseThrow(ResourceNotFoundException::new);
         } catch (Exception e) {
             throw new QuizzardException(e);
         }
@@ -84,9 +100,12 @@ public class UserService {
 
         try {
             return !userRepo.findUserByUsername(username).isPresent();
+        } catch(NoResultException nre) {
+            return true;
         } catch (Exception e) {
             throw new QuizzardException(e);
         }
+
     }
 
     @Transactional(readOnly=true)
@@ -98,6 +117,8 @@ public class UserService {
 
         try {
             return !userRepo.findUserByEmail(email).isPresent();
+        } catch (NoResultException nre) {
+            return true;
         } catch (Exception e) {
             throw new QuizzardException(e);
         }
