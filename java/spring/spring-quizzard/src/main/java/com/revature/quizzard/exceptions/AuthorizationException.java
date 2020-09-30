@@ -9,6 +9,7 @@ public class AuthorizationException extends QuizzardException {
     public AuthorizationException(String msg) {
         super(msg);
     }
+<<<<<<< HEAD
 
     public AuthorizationException(String msg, Throwable cause) {
         super(msg, cause);
@@ -17,4 +18,6 @@ public class AuthorizationException extends QuizzardException {
     public AuthorizationException(Throwable cause) {
         super(cause);
     }
+=======
+>>>>>>> 94ec4c8aac41b5b0457982f30f068c8d880c466d
 }

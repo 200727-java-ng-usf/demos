@@ -21,24 +21,30 @@ public class UserRepository implements CrudRepository<AppUser> {
 
     public Optional<AppUser> findUserByUsernameAndPassword(String username, String password) {
         Session session = sessionFactory.getCurrentSession();
-        return Optional.of(session.createQuery("from AppUser au where au.username = :un and au.password = :pw", AppUser.class)
+        return session.createQuery("from AppUser au where au.username = :un and au.password = :pw", AppUser.class)
                 .setParameter("un", username)
                 .setParameter("pw", password)
-                .getSingleResult());
+                .getResultList()
+                .stream()
+                .findFirst();
     }
 
     public Optional<AppUser> findUserByUsername(String username) {
         Session session = sessionFactory.getCurrentSession();
-        return Optional.ofNullable(session.createQuery("from AppUser au where au.username = :un", AppUser.class)
+        return session.createQuery("from AppUser au where au.username = :un", AppUser.class)
                 .setParameter("un", username)
-                .getSingleResult());
+                .getResultList()
+                .stream()
+                .findFirst();
     }
 
     public Optional<AppUser> findUserByEmail(String email) {
         Session session = sessionFactory.getCurrentSession();
-        return Optional.ofNullable(session.createQuery("from AppUser au where au.email = :email", AppUser.class)
+        return session.createQuery("from AppUser au where au.email = :email", AppUser.class)
                 .setParameter("email", email)
-                .getSingleResult());
+                .getResultList()
+                .stream()
+                .findFirst();
     }
 
     @Override

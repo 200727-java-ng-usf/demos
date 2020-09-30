@@ -1,5 +1,9 @@
 server:
+<<<<<<< HEAD
   port: 5000 #ElasticBeanstalk expects for Java apps to be deployed on port 5000 (for some reason)
+=======
+  port: 5000 # ElasticBeanstalk expects for Java apps to be deployed on port 5000 (for some reason)
+>>>>>>> 94ec4c8aac41b5b0457982f30f068c8d880c466d
 
 spring:
   application:
@@ -25,7 +29,22 @@ management:
       exposure:
         include: "*"
 
+<<<<<<< HEAD
 
 # spring.application.name=spring-boot-poc
 # spring.h2.console.enabled=true
 # spring.h2.console.path=/h2
+=======
+# .properties file version of the above .yml configuration
+#-------------------------------------------------------------
+# spring.application.name=spring-boot-poc
+# spring.h2.console.enabled=true
+# spring.h2.console.path=/h2
+# spring.datasource.url=jdbc:h2:mem:testdb
+# spring.datasource.driver-class-name:org.H2.Driver
+# spring.datasource.username=sa
+# spring.datasource.password=password
+# spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+# spring.jpa.show-sql=true
+# spring.jpa.hibernate.ddl-auto=create
+>>>>>>> 94ec4c8aac41b5b0457982f30f068c8d880c466d

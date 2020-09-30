@@ -23,5 +23,4 @@ public class AuthController {
     public AppUser login(@Valid @RequestBody Credentials creds) {
         return userRepo.findAppUserByUsernameAndPassword(creds.getUsername(), creds.getPassword());
     }
-
 }

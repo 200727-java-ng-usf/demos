@@ -27,7 +27,11 @@ public class UserController {
         this.userService = service;
     }
 
+<<<<<<< HEAD
     @Secured(allowedRoles = {"Admin", "Dev"})
+=======
+    @Secured(allowedRoles={"Admin", "Dev"})
+>>>>>>> 94ec4c8aac41b5b0457982f30f068c8d880c466d
     @GetMapping(produces=MediaType.APPLICATION_JSON_VALUE)
     public List<AppUser> getAllUsers() {
         return userService.getAllUsers();

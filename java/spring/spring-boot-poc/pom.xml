@@ -23,9 +23,15 @@
         <!--
             Spring Boot Starter Dependencies
 
+<<<<<<< HEAD
                 - Convenient dependency descriptors
                 - "uber" jars (jars containing jars, containing jars)
          -->
+=======
+                - convenient dependency descriptors
+                - "uber" jars (jars containing jars, containing jars)
+        -->
+>>>>>>> 94ec4c8aac41b5b0457982f30f068c8d880c466d
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -38,7 +44,11 @@
                     + automatic server restart
                     + live reloading of ApplicationContext
                     + and more...
+<<<<<<< HEAD
          -->
+=======
+        -->
+>>>>>>> 94ec4c8aac41b5b0457982f30f068c8d880c466d
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -60,7 +70,11 @@
         <!--
             Spring Data JPA
 
+<<<<<<< HEAD
                 - A subproject of the Spring Data project, specifically for relational databases
+=======
+                - A sub-project of the Spring Data project, specifically for relational DBs
+>>>>>>> 94ec4c8aac41b5b0457982f30f068c8d880c466d
                 - Allows for the creation of "instant repositories"
                 - Basic CRUD functionality provided out-of-the-box
         -->
@@ -72,7 +86,11 @@
         <!--
             Spring Boot Starter Validation
 
+<<<<<<< HEAD
                 - Provides us with convenient annotations for validation incoming objects
+=======
+                - Provides us with convenient annotations for validation objects
+>>>>>>> 94ec4c8aac41b5b0457982f30f068c8d880c466d
                   that will be in the @RequestBody of incoming requests.
         -->
         <dependency>
@@ -109,5 +127,8 @@
         </plugins>
     </build>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 94ec4c8aac41b5b0457982f30f068c8d880c466d
 </project>

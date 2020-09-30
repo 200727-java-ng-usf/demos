@@ -37,12 +37,15 @@ public class ErrorResponseAspect {
     }
 
     @ExceptionHandler
+<<<<<<< HEAD
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public ErrorResponse handleInternalServerErrors(Exception e) {
         return new ErrorResponse(500, e.getMessage());
     }
 
     @ExceptionHandler
+=======
+>>>>>>> 94ec4c8aac41b5b0457982f30f068c8d880c466d
     @ResponseStatus(HttpStatus.FORBIDDEN)
     public ErrorResponse handleForbiddenRequests(AuthorizationException ae) {
         return new ErrorResponse(403, ae.getMessage());

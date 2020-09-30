@@ -100,11 +100,18 @@ public class UserService {
 
         try {
             return !userRepo.findUserByUsername(username).isPresent();
+<<<<<<< HEAD
         } catch (NoResultException nre) {
             return true;
         } catch (Exception e) {
             throw new QuizzardException(e);
         }
+=======
+        } catch (Exception e) {
+            throw new QuizzardException(e);
+        }
+
+>>>>>>> 94ec4c8aac41b5b0457982f30f068c8d880c466d
     }
 
     @Transactional(readOnly=true)
@@ -115,9 +122,13 @@ public class UserService {
         }
 
         try {
+<<<<<<< HEAD
             return userRepo.findUserByEmail(email).isPresent();
         } catch (NoResultException nre) {
             return true;
+=======
+            return !userRepo.findUserByEmail(email).isPresent();
+>>>>>>> 94ec4c8aac41b5b0457982f30f068c8d880c466d
         } catch (Exception e) {
             throw new QuizzardException(e);
         }

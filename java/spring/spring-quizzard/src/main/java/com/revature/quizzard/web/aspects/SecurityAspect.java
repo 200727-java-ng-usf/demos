@@ -38,7 +38,11 @@ public class SecurityAspect {
         Principal principal = (Principal) request.getSession().getAttribute("principal");
 
         if (principal == null) {
+<<<<<<< HEAD
             throw new AuthenticationException(("An unauthenticated request was made to a protected endpoint!"));
+=======
+            throw new AuthenticationException("An unauthenticated request was made to a protected endpoint!");
+>>>>>>> 94ec4c8aac41b5b0457982f30f068c8d880c466d
         }
 
         if(!allowedRoles.contains(principal.getRole().toString())) {
@@ -52,4 +56,8 @@ public class SecurityAspect {
         return target;
 
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 94ec4c8aac41b5b0457982f30f068c8d880c466d
 }
