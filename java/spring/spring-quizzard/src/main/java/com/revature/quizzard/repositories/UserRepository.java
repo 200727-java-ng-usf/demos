@@ -27,6 +27,20 @@ public class UserRepository implements CrudRepository<AppUser> {
                 .getSingleResult());
     }
 
+    public Optional<AppUser> findUserByUsername(String username) {
+        Session session = sessionFactory.getCurrentSession();
+        return Optional.of(session.createQuery("from AppUser au where au.username = :un", AppUser.class)
+                .setParameter("un", username)
+                .getSingleResult());
+    }
+
+    public Optional<AppUser> findUserByEmail(String email) {
+        Session session = sessionFactory.getCurrentSession();
+        return Optional.of(session.createQuery("from AppUser au where au.email = :email", AppUser.class)
+                .setParameter("email", email)
+                .getSingleResult());
+    }
+
     @Override
     public List<AppUser> findAll() {
         Session session = sessionFactory.getCurrentSession();
