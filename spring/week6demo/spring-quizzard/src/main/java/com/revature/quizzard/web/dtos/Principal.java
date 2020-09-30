@@ -1,5 +1,7 @@
 package com.revature.quizzard.web.dtos;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.quizzard.models.AppUser;
 
 import java.util.Objects;
@@ -48,6 +50,10 @@ public class Principal {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public String stringify() throws JsonProcessingException {
+		return new ObjectMapper().writeValueAsString(this);
 	}
 
 	@Override

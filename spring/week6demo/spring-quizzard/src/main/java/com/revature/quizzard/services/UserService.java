@@ -49,7 +49,7 @@ public class UserService {
 	@Transactional(readOnly = true)
 	public AppUser findUserByUsername(String username){
 		if(username == null || username.equals("")){
-			throw new InvalidRequestException("Id cannot be less than or equal to zero.");
+			throw new InvalidRequestException("Username cannot be null or empty.");
 		}
 
 		try{
@@ -107,14 +107,10 @@ public class UserService {
 			throw new InvalidRequestException("Username cannot be null or empty!");
 		}
 		try{
-			userRepo.findUserByUsername(username);
-
-		} catch(NoResultException nre){
-			return true;
+			return userRepo.findUserByUsername(username).orElse(null) == null;
 		} catch (Exception e) {
 			throw new QuizzardException(e);
 		}
-		return false;
 	}
 
 	@Transactional(readOnly = true)
@@ -123,17 +119,15 @@ public class UserService {
 			throw new InvalidRequestException("Email cannot be null or empty!");
 		}
 		try{
-			userRepo.findUserByEmail(email);
-		} catch(NoResultException nre){
-			return true;
+			return userRepo.findUserByEmail(email).orElse(null) == null;
 		} catch (Exception e) {
 			throw new QuizzardException(e);
 		}
-		return false;
 	}
 
 	public boolean isAppUserValid(AppUser candidate) {
 
+		if (candidate == null) return false;
 		if (candidate.getEmail() == null || candidate.getEmail().equals("")) return false;
 		if (candidate.getUsername() == null || candidate.getUsername().equals("")) return false;
 		if (candidate.getPassword() == null || candidate.getPassword().equals("")) return false;

@@ -4,6 +4,7 @@ import com.revature.quizzard.exceptions.ResourcePersistenceException;
 import com.revature.quizzard.models.AppUser;
 import com.revature.quizzard.services.UserService;
 import com.revature.quizzard.web.dtos.ErrorResponse;
+import com.revature.quizzard.web.security.Secured;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -26,6 +27,7 @@ public class UserController {
 	}
 
 	// produces is good practice to include.
+	@Secured(allowedRoles = {"Admin", "Dev"})
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<AppUser> getAllUsers(){
 		return userService.getAllUsers();
