@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-<<<<<<< HEAD
 
 
 .h1{
+    color: pink;
     font-size: 2em;
     font-weight: bolder;
 }
@@ -26,8 +26,3 @@
 	font-size: .67em;
     font-weight: bolder;
 }
-=======
-h1 {
-    color: pink;
-}
->>>>>>> e8242646d3e125196ce02b14c450f60a06b29675

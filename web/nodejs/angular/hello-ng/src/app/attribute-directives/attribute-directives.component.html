@@ -1,8 +1,11 @@
 <div>
-<<<<<<< HEAD
 	<span>Name:</span>
 	<input type="checkbox" (click)="enabler()">
 	<br/>
+	<!-- 
+		To use ngModel directive,  you must include the FormsModule within the
+		imports array of the Angular moudle that this component is a part of.
+	-->
 	<select name="color" [(ngModel)]="selectedColor" [disabled]="isDisabled">
 		<option *ngFor="let color of colors">{{ color }}</option>
 	</select>
@@ -16,37 +19,11 @@
 			{{class.displayName}}
 		</option>
 	</select>
-=======
-    <span>Name:</span>
-    <input type="checkbox" (click)="enabler()">
-
-    <br/>
-    
-    <!-- 
-        To use ngModel directive,  you must include the FormsModule within the
-        imports array of the Angular moudle that this component is a part of.
-    -->
-    <select name="color" [(ngModel)]="selectedColor" [disabled]="isDisabled">
-        <option *ngFor="let color of colors">{{ color }}</option>
-    </select>
-
-    <br/>
-    <br/>
-
-    <span>Classes:</span>
-    <select multiple name="class" (change)="addClasses($event)">
-        <option *ngFor="let class of classes" [value]="class.className">
-            {{ class.displayName }}
-        </option>
-    </select>
-
->>>>>>> e8242646d3e125196ce02b14c450f60a06b29675
 </div>
 
 <br/>
 <br/>
 
-<<<<<<< HEAD
 
 
 <div>
@@ -57,15 +34,3 @@
 		color: {{selectedColor}}
 	</span>
 </div>
-=======
-<div>
-
-    Name: {{ name }}
-    <br/>
-    <br/>
-    <span [ngClass]="selectedClasses.join(' ')" [ngStyle]="{'color': selectedColor}">
-        color: {{ selectedColor }}
-    </span>
-
-</div>
->>>>>>> e8242646d3e125196ce02b14c450f60a06b29675

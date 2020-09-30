@@ -9,26 +9,16 @@ export class StructuralDirectivesComponent {
 
   // ngIf demo
   condition = true;
-<<<<<<< HEAD
   anotherCondition = false;
-=======
-  anotherCondition = true;
->>>>>>> e8242646d3e125196ce02b14c450f60a06b29675
 
   changeCondition() {
     this.condition = !this.condition;
     this.anotherCondition = !this.anotherCondition;
   }
 
-<<<<<<< HEAD
   // ---------------------------------------
 
   people: string[] = [
-=======
-  //----------------------------------------
-
-  people = [
->>>>>>> e8242646d3e125196ce02b14c450f60a06b29675
     'Wezley',
     'Troy',
     'Farren',
@@ -54,16 +44,6 @@ export class StructuralDirectivesComponent {
     },
     {
       name: 'Godzilla',
-<<<<<<< HEAD
-      location: 'Tokyo'
-    },
-  ]
-
-  // ---------------------------------------
-
-  time: string = '';
-  // night;
-=======
       location: 'Tokyo, Japan'
     }
   ]
@@ -74,7 +54,6 @@ export class StructuralDirectivesComponent {
 
   time: string = '';
 
->>>>>>> e8242646d3e125196ce02b14c450f60a06b29675
   changeTimeOfDay(desiredTime: string) {
     this.time = desiredTime;
   }

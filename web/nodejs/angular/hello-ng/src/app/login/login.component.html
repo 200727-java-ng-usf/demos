@@ -1,5 +1,4 @@
 <div id="login-container">
-<<<<<<< HEAD
 	<form [formGroup]="loginForm" (ngSubmit)="login()">
 		<div class="form-group">
 			<label for="username">Username</label>
@@ -22,29 +21,3 @@
 	</form>
 
 </div>
-=======
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input id="username" type="text" class="form-control" formControlName="username"/>
-            <div *ngIf="submitted && formFields.username.errors">
-                <p class="alert alert-danger">Username is required!</p>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input id="password" type="password" class="form-control" formControlName="password"/>
-            <div *ngIf="submitted && formFields.password.errors">
-                <p class="alert alert-danger">Password is required!</p>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <button class="btn btn-primary" [disabled]="loading">Login</button>
-            <img id="loading-img" src="assets/loading-star.gif" *ngIf="loading"/>
-        </div>
-    </form>
-
-</div>
->>>>>>> e8242646d3e125196ce02b14c450f60a06b29675
