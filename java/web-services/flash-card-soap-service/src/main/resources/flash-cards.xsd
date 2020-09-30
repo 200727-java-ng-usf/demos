@@ -2,7 +2,7 @@
 		   xmlns:tns="http://revature.com" targetNamespace="http://revature.com"
 		   elementFormDefault="qualified">
 		  
-	<!-- Define the "shape" of our applications entities/POJOs/beans/types/models -->
+	<!-- Define the "shape" of our application's entities/POJOs/beans/types/models -->
 	<xs:complexType name="flashCard">
 		<xs:sequence>
 			<xs:element name="id" type="xs:int"/>

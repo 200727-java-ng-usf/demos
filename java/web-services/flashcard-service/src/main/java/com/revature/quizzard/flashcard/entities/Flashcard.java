@@ -1,7 +1,5 @@
 package com.revature.quizzard.flashcard.entities;
 
-import org.springframework.stereotype.Component;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;

@@ -1,6 +1,7 @@
 package com.revature.quizzard.flashcard.controllers;
 
 import com.revature.quizzard.flashcard.dtos.ErrorResponse;
+import com.revature.quizzard.flashcard.entities.Category;
 import com.revature.quizzard.flashcard.entities.Flashcard;
 import com.revature.quizzard.flashcard.exceptions.ResourceNotFoundException;
 import com.revature.quizzard.flashcard.services.FlashcardService;
@@ -10,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/flashcards")
@@ -35,6 +37,11 @@ public class FlashcardController {
             default:
                 throw new RuntimeException("INVALID REQUEST");
         }
+    }
+
+    @GetMapping(value="/id/{id}/categories")
+    public Set<Category> getFlashCardCategories(@PathVariable int id) {
+        return cardService.getCardById(id).getCategories();
     }
 
     @ResponseStatus(HttpStatus.CREATED)
