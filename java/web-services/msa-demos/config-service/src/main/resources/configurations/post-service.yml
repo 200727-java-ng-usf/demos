@@ -19,7 +19,7 @@ spring:
 
 eureka:
   client:
-    fetch-registry: false
+    fetch-registry: true
     register-with-eureka: true
     enabled: true
     service-url:

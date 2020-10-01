@@ -1,5 +1,6 @@
 package com.revature.controllers;
 
+import com.revature.dtos.PostDTO;
 import com.revature.models.Post;
 import com.revature.services.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +23,17 @@ public class PostController {
     }
 
     @GetMapping
-    public List<Post> getAllPosts() {
+    public List<PostDTO> getAllPosts() {
         return postService.getAllPosts();
     }
 
     @GetMapping(value = "/poster/{posterId}")
-    public List<Post> getPostsByPosterId(@PathVariable int posterId) {
+    public List<PostDTO> getPostsByPosterId(@PathVariable int posterId) {
         return postService.getPostsByPosterId(posterId);
     }
 
     @GetMapping(value = "/id/{postId}")
-    public Post getPostById(@PathVariable int postId) {
+    public PostDTO getPostById(@PathVariable int postId) {
         return postService.getPostById(postId);
     }
 

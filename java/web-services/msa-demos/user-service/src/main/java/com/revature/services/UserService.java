@@ -25,4 +25,11 @@ public class UserService {
                 .map(appUser -> new AppUserDTO(appUser))
                 .collect(Collectors.toList());
     }
+
+    @Transactional(readOnly=true)
+    public AppUserDTO getUserById(int id) {
+        AppUser user = userRepo.findById(id).orElseThrow(() -> new RuntimeException("No user found with provided id!"));
+        return new AppUserDTO(user);
+    }
+
 }
