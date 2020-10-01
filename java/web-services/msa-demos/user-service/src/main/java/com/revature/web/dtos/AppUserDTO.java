@@ -29,6 +29,7 @@ public class AppUserDTO {
         } else {
             this.isActive = true;
         }
+
     }
 
 }

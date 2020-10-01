@@ -14,17 +14,15 @@ public class UserService {
 
     private UserRepository userRepo;
 
-    private UserService(UserRepository repo) {
+    public UserService(UserRepository repo) {
         this.userRepo = repo;
     }
 
-    @Transactional(readOnly = true)
+    @Transactional(readOnly=true)
     public List<AppUserDTO> getAllUsers() {
         return ((List<AppUser>) userRepo.findAll())
                 .stream()
                 .map(appUser -> new AppUserDTO(appUser))
                 .collect(Collectors.toList());
     }
-
-
 }
