@@ -25,10 +25,10 @@ spring:
           predicates:
             - Path=/users/**
           filters:
-            - RewritePath=/users(?<segment>/?.*), $\{segment}
+            - RewritePath=/users/(?<segment>/?.*), $\{segment}
         - id: post-service
           uri: lb://post-service
           predicates:
             - Path=/posts/**
           filters:
-            - RewritePath=/posts(?<segment>/?.*), $\{segment}
+            - RewritePath=/posts/(?<segment>/?.*), $\{segment}
