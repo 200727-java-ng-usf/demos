@@ -1,9 +1,11 @@
+# Overrides the
+fake:
+  property: not-fake
+
 server:
   port: 10001
 
 spring:
-  application:
-    name: user-service
   h2:
     console:
       enabled: true

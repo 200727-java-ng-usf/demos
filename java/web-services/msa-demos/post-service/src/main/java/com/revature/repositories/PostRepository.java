@@ -8,6 +8,9 @@ import java.util.List;
 
 @Repository
 public interface PostRepository extends CrudRepository<Post, Integer> {
+<<<<<<< HEAD
 
+=======
+>>>>>>> f129b70f7553797eaaab4ba93bd74130af1e388d
     List<Post> findPostsByPosterId(int posterId);
 }

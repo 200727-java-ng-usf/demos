@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: discovery-service
+  # this is the default, and if your config-server is in fact running
+  # at localhost:8888 - you do not need to include this (see user-service
+  # bootstrap.yml
+  cloud:
+    config:
+      uri: http://localhost:8888

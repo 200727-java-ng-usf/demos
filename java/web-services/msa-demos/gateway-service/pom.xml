@@ -10,6 +10,10 @@
         <version>2.3.0.RELEASE</version>
     </parent>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f129b70f7553797eaaab4ba93bd74130af1e388d
     <groupId>com.revature</groupId>
     <artifactId>gateway-service</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -42,15 +46,38 @@
     </dependencyManagement>
 
     <dependencies>
+<<<<<<< HEAD
+=======
+
+>>>>>>> f129b70f7553797eaaab4ba93bd74130af1e388d
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
+<<<<<<< HEAD
+=======
+
+>>>>>>> f129b70f7553797eaaab4ba93bd74130af1e388d
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+<<<<<<< HEAD
     </dependencies>
 
+=======
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-client</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+    </dependencies>
+>>>>>>> f129b70f7553797eaaab4ba93bd74130af1e388d
 
 </project>

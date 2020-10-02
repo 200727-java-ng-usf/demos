@@ -41,4 +41,8 @@ public class Post {
 
     @Column(name = "poster_id", nullable = false)
     private int posterId;
+<<<<<<< HEAD
+=======
+
+>>>>>>> f129b70f7553797eaaab4ba93bd74130af1e388d
 }
