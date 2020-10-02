@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: discovery-service
+    # This is the default, and if your config-server is in fact running at localhost:8888
+    #
+  cloud:
+    config:
+      uri: http://localhost:8888
