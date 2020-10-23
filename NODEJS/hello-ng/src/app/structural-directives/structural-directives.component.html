@@ -1,0 +1,5 @@
+<div * ngIf="condition">Condition met</div><!--same variable name in ts-->
+<div * ngIf="condition">Condition not met </div>
+
+<!--event binding, dont need to add event listener. Has '()' in case we want to pass in parameters-->
+<button (click)="changeCondition()">change Condition</button>

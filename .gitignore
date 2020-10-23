@@ -8,3 +8,10 @@ target/
 out/
 
 .DS_Store
+
+target/
+*.class
+*.properties
+*.war
+*.jar
+*.ear
