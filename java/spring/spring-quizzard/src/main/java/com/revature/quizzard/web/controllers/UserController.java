@@ -24,6 +24,7 @@ public class UserController {
 
     @Autowired
     public UserController(UserService service) {
+        System.out.println("UserController#new invoked!");
         this.userService = service;
     }
 

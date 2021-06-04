@@ -20,6 +20,7 @@ public class UserService {
 
     @Autowired
     public UserService(UserRepository repo) {
+        System.out.println("UserService#new invoked!");
         userRepo = repo;
     }
 

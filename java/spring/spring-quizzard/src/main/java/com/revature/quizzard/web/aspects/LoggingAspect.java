@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.Arrays;
 
 @Aspect
-@Component
+//@Component
 public class LoggingAspect {
 
     @Pointcut("within(com.revature.quizzard..*)")

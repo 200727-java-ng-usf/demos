@@ -16,6 +16,7 @@ public class UserRepository implements CrudRepository<AppUser> {
 
     @Autowired
     public UserRepository(SessionFactory factory) {
+        System.out.println("UserRepository#new invoked!");
         sessionFactory = factory;
     }
 

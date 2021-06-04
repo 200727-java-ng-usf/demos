@@ -1,6 +1,5 @@
 package com.revature.quizzard.web.aspects;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.quizzard.exceptions.AuthenticationException;
 import com.revature.quizzard.exceptions.AuthorizationException;
 import com.revature.quizzard.web.dtos.Principal;
@@ -11,6 +10,8 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
@@ -21,15 +22,10 @@ import java.util.List;
 @Component
 public class SecurityAspect {
 
-    private HttpServletRequest request;
-
-    @Autowired
-    public SecurityAspect(HttpServletRequest req) {
-        this.request = req;
-    }
-
     @Around("@annotation(com.revature.quizzard.web.security.Secured)")
     public Object secureEndpoint(ProceedingJoinPoint pjp) throws Throwable {
+
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
 
         Method method = ((MethodSignature) pjp.getSignature()).getMethod();
         Secured securedAnno = method.getAnnotation(Secured.class);

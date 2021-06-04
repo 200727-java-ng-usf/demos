@@ -21,6 +21,7 @@ public class AuthController {
 
     @Autowired
     public AuthController(UserService service) {
+        System.out.println("AuthController#new invoked!");
         this.userService = service;
     }
 
